@@ -22,6 +22,44 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/color-01.css') }}">
     @livewireStyles
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    .modal-header {
+    padding:9px 15px;
+    border-bottom:1px solid #eee;
+    background-color: #0499be;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+ }
+  </style>
+
+    <!-- Modal -->
+    <div class="modal faded" id="exampleModal"  role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"
+                    data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 </head>
 
 <body class="home-page home-01 ">
@@ -33,6 +71,7 @@
         </div>
         <div class="mercado-panels"></div>
     </div>
+
 
     <!--header-->
     <header id="header" class="header header-style-1">
@@ -131,7 +170,11 @@
                     </div>
 
                     <div class="container">
+
+
+
                         <div class="mid-section main-info-area">
+
 
                             <div class="wrap-logo-top left-section">
                                 <a href="{{ url('/') }}" class="link-to-home"
@@ -146,7 +189,8 @@
                             <div class="wrap-icon right-section">
                                 @auth
                                     <div class="wrap-icon-section wishlist">
-                                        <a href="/profile" class="link-direction">
+                                        <a href="#" class="link-direction" data-toggle="modal"
+                                            data-target="#exampleModal">
                                             <i class="fa fa-user" aria-hidden="true"></i>
                                             <div class="left-info">
                                                 <span class="index">Hello, User</span> {{-- Username --}}
@@ -566,6 +610,9 @@
         <script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>
         <script src="{{ asset('assets/js/functions.js') }}"></script>
         @livewireScripts
+
+
+
     </body>
 
     </html>
