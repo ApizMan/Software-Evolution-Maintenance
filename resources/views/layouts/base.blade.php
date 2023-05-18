@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/favicon.ico') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/logoPetakomkecil.ico') }}">
     <link
         href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext"
         rel="stylesheet">
@@ -134,24 +134,37 @@
                         <div class="mid-section main-info-area">
 
                             <div class="wrap-logo-top left-section">
-                                <a href="{{ url('/') }}" class="link-to-home" style="font-size:14px; font-weight: 800;"><img
+                                <a href="{{ url('/') }}" class="link-to-home"
+                                    style="font-size:14px; font-weight: 800;"><img
                                         src="{{ asset('assets/images/logo-PETAKOM.png') }}" alt="mercado"
                                         style="height: 60px; width: 60px;"> PETAKOM MART
-                                    </a>
+                                </a>
                             </div>
 
                             @livewire('header-search-component')
 
                             <div class="wrap-icon right-section">
-                                <div class="wrap-icon-section wishlist">
-                                    <a href="/login" class="link-direction">
-                                        <i class="fa fa-user" aria-hidden="true"></i>
-                                        <div class="left-info">
-                                            <span class="index">Hello, User</span> {{-- Username --}}
-                                            <span class="title">Profile</span>
-                                        </div>
-                                    </a>
-                                </div>
+                                @auth
+                                    <div class="wrap-icon-section wishlist">
+                                        <a href="/profile" class="link-direction">
+                                            <i class="fa fa-user" aria-hidden="true"></i>
+                                            <div class="left-info">
+                                                <span class="index">Hello, User</span> {{-- Username --}}
+                                                <span class="title">Profile</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                @else
+                                    <div class="wrap-icon-section wishlist">
+                                        <a href="#" class="link-direction">
+                                            <i class="" aria-hidden="true"></i>
+                                            <div class="left-info">
+                                                <span class=""></span>
+                                                <span class="title"></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                @endauth
                                 <div class="wrap-icon-section minicart">
                                     <a href="#" class="link-direction">
                                         <i class="fa fa-shopping-basket" aria-hidden="true"></i>
@@ -181,7 +194,8 @@
                             <div class="container">
                                 <ul class="nav menu-nav clone-main-menu" id="mercado_haead_menu"
                                     data-menuname="Sale Info">
-                                    <li class="menu-item"><a href="#" class="link-term"><i class="fa fa-bars"></i> All Category</a></li>
+                                    <li class="menu-item"><a href="#" class="link-term"><i class="fa fa-bars"></i>
+                                            All Category</a></li>
                                     <li class="menu-item"><a href="#" class="link-term">Hot Offer</a><span
                                             class="nav-label hot-label">hot</span></li>
                                     <li class="menu-item"><a href="#" class="link-term">Gift Boxes</a><span

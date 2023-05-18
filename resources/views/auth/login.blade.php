@@ -141,9 +141,9 @@
                                             <label for="checkbox_toggle" class="slide">
                                                 <label for="checkbox_toggle" class="toggle"></label>
                                                 <label for="checkbox_toggle"
-                                                    class="text">Cashier&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                                    class="text"><a href="/user/dashboard" style="color: black;">Cashier</a>&nbsp;&nbsp;&nbsp;&nbsp;</label>
                                                 <label for="checkbox_toggle"
-                                                    class="text">Admin&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                                    class="text"><a href="/admin/dashboard" style="color: black;">Admin</a>&nbsp;&nbsp;&nbsp;&nbsp;</label>
                                             </label>
                                         </div>
                                     </center>
