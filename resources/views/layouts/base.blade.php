@@ -30,7 +30,7 @@
     .modal-header {
     padding:9px 15px;
     border-bottom:1px solid #eee;
-    background-color: #0499be;
+    background-color: #3fbddd;
     -webkit-border-top-left-radius: 5px;
     -webkit-border-top-right-radius: 5px;
     -moz-border-radius-topleft: 5px;
