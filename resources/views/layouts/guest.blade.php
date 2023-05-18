@@ -29,7 +29,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Home</title>	
+	<title>Home</title>
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/favicon.ico') }}">
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet">
@@ -66,7 +66,7 @@
 							</ul>
 						</div>
 						<div class="topbar-menu right-menu">
-							<ul>								
+							<ul>
 								<li class="menu-item lang-menu menu-item-has-children parent">
 									<a title="English" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-en.png') }}" alt="lang-en"></span>English<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 									<ul class="submenu lang" >
@@ -76,7 +76,7 @@
 										<li class="menu-item" ><a title="canada" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-can.png') }}" alt="lang-can"></span>Canada</a></li>
 									</ul>
 								</li>
-								
+
 								@if(Route::has('login'))
 									@auth
 									@if(Auth::user()->utype === 'ADM')
@@ -90,7 +90,7 @@
 													<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 												</li>
 												<form id="logout-form" method="POST" action="{{ route('logout') }}">
-													@csrf													
+													@csrf
 												</form>
 											</ul>
 										</li>
@@ -105,14 +105,14 @@
 													<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 												</li>
 												<form id="logout-form" method="POST" action="{{ route('logout') }}">
-													@csrf													
+													@csrf
 												</form>
 											</ul>
 										</li>
 									@endif
 									@else
 										<li class="menu-item" ><a title="Register or Login" href="{{ route('login') }}">Login</a></li>
-										<li class="menu-item" ><a title="Register or Login" href="{{ route('register') }}">Register</a></li>
+										{{-- <li class="menu-item" ><a title="Register or Login" href="{{ route('register') }}">Register</a></li> --}}
 									@endif
 								@endif
 							</ul>
@@ -124,8 +124,11 @@
 					<div class="mid-section main-info-area">
 
 						<div class="wrap-logo-top left-section">
-							<a href="{{ url('/') }}" class="link-to-home"><img src="{{ asset('assets/images/logo-top-1.png') }}" alt="mercado"></a>
-						</div>
+                            <a href="{{ url('/') }}" class="link-to-home" style="font-size:14px; font-weight: 800;"><img
+                                    src="{{ asset('assets/images/logo-PETAKOM.png') }}" alt="mercado"
+                                    style="height: 60px; width: 60px;"> PETAKOM MART
+                                </a>
+                        </div>
 
 						<div class="wrap-search center-section">
 							<div class="wrap-search-form">
@@ -162,10 +165,10 @@
 						<div class="wrap-icon right-section">
 							<div class="wrap-icon-section wishlist">
 								<a href="#" class="link-direction">
-									<i class="fa fa-heart" aria-hidden="true"></i>
+									<i class="" aria-hidden="true"></i>
 									<div class="left-info">
-										<span class="index">0 item</span>
-										<span class="title">Wishlist</span>
+										<span class=""></span>
+										<span class="title"></span>
 									</div>
 								</a>
 							</div>
@@ -223,7 +226,7 @@
 								</li>
 								<li class="menu-item">
 									<a href="{{ url('/contact-us') }}" class="link-term mercado-item-title">Contact Us</a>
-								</li>																	
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -231,7 +234,7 @@
 			</div>
 		</div>
     </header>
-    
+
     {{ $slot }}
 
 	<footer id="footer">
@@ -300,7 +303,7 @@
 											<li>
 												<i class="fa fa-envelope" aria-hidden="true"></i>
 												<p class="contact-txt">Contact@yourcompany.com</p>
-											</li>											
+											</li>
 										</ul>
 									</div>
 								</div>
@@ -475,10 +478,10 @@
 					<div class="coppy-right-item item-right">
 						<div class="wrap-nav horizontal-nav">
 							<ul>
-								<li class="menu-item"><a href="{{ url('/about-us') }}" class="link-term">About us</a></li>								
+								<li class="menu-item"><a href="{{ url('/about-us') }}" class="link-term">About us</a></li>
 								<li class="menu-item"><a href="{{ url('/privacy-policy') }}" class="link-term">Privacy Policy</a></li>
 								<li class="menu-item"><a href="{{ url('/terms-conditions') }}" class="link-term">Terms & Conditions</a></li>
-								<li class="menu-item"><a href="{{ url('/return-policy') }}" class="link-term">Return Policy</a></li>								
+								<li class="menu-item"><a href="{{ url('/return-policy') }}" class="link-term">Return Policy</a></li>
 							</ul>
 						</div>
 					</div>
@@ -487,7 +490,7 @@
 			</div>
 		</div>
 	</footer>
-	
+
 	<script src="{{ asset('assets/js/jquery-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
 	<script src="{{ asset('assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
 	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
