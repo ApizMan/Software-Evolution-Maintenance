@@ -38,19 +38,33 @@
      border-top-left-radius: 5px;
      border-top-right-radius: 5px;
  }
+
+ .banner-countdown {
+                position: relative;
+                left: 2px;
+                width: 80%;
+                height: 40%;
+                margin: 0 auto;
+                background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+            }
   </style>
 
-    <!-- Modal -->
-    <div class="modal faded" id="exampleModal"  role="dialog">
+    <!-- Modal Profile-->
+    <div class="modal faded" id="profileModal"  role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                    aria-label="Close"></button>
+                <h1 class="modal-title fs-5" id="profileModalLabel"></h1>
+                <button type="button" class="btn btn-primary" style="background-color: #1068eb;">View Schedule Duty</button>
+                <button type="button" class="btn btn-danger" style=" float: right;">Logout <i class="fa fa-power-off"></i></button>
+
             </div>
             <div class="modal-body">
-                ...
+                <div class="banner-countdown">
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary"
@@ -190,7 +204,7 @@
                                 @auth
                                     <div class="wrap-icon-section wishlist">
                                         <a href="#" class="link-direction" data-toggle="modal"
-                                            data-target="#exampleModal">
+                                            data-target="#profileModal">
                                             <i class="fa fa-user" aria-hidden="true"></i>
                                             <div class="left-info">
                                                 <span class="index">Hello, User</span> {{-- Username --}}
@@ -210,7 +224,7 @@
                                     </div>
                                 @endauth
                                 <div class="wrap-icon-section minicart">
-                                    <a href="#" class="link-direction">
+                                    <a href="{{ url('/cart') }}" class="link-direction">
                                         <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                                         <div class="left-info">
                                             @if (Cart::count() > 0)
@@ -269,10 +283,10 @@
                                     <li class="menu-item">
                                         <a href="{{ url('/cart') }}" class="link-term mercado-item-title">Cart</a>
                                     </li>
-                                    <li class="menu-item">
+                                    {{-- <li class="menu-item">
                                         <a href="{{ url('/checkout') }}"
                                             class="link-term mercado-item-title">Checkout</a>
-                                    </li>
+                                    </li> --}}
                                     <li class="menu-item">
                                         <a href="{{ url('/contact-us') }}" class="link-term mercado-item-title">Contact
                                             Us</a>
