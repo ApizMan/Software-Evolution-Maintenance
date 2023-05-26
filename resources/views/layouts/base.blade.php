@@ -52,7 +52,7 @@
             }
   </style>
 
-    <!-- Modal Profile-->
+    <!-- Modal git -->
     <div class="modal faded" id="profileModal"  role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
