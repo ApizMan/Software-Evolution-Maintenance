@@ -62,8 +62,24 @@
                 <button type="button" class="btn btn-danger" style=" float: right;">Logout <i class="fa fa-power-off"></i></button>
 
             </div>
+            <!-- Profile with Image  -->
             <div class="modal-body">
                 <div class="banner-countdown">
+                        <h5><b>Mr. Hassan Magdy</b></h5>
+                        <p>Cashier <br><br>
+                        Email: hassan@gmail.com <br>
+                        No Phone: 018-4643504 <br>
+                        </p>
+                </div>
+            </div>
+            <!-- Profile Details  -->
+            <div class="modal-body">
+                <div class="banner-countdown">
+                        <h5><b>Profile Details</b></h5>
+                        <p>Faculty: FKOM <br>
+                        Course: BCS <br>
+                        </p>
+                        
                 </div>
             </div>
             <div class="modal-footer">
