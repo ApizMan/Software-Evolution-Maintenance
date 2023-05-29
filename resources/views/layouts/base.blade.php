@@ -66,9 +66,9 @@
             <div class="modal-body">
                 <div class="banner-countdown">
                         <h5><b>Mr. Hassan Magdy</b></h5>
-                        <p>Cashier <br><br>
-                        Email: hassan@gmail.com <br>
-                        No Phone: 018-4643504 <br>
+                        <p>Cashier <br>
+
+                        Email: hassan@gmail.com
                         </p>
                 </div>
             </div>
@@ -85,7 +85,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary"
                     data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
             </div>
         </div>
     </div>
