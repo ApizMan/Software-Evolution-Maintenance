@@ -221,12 +221,18 @@
                                 @endauth
 
                                 <div class="wrap-icon-section minicart">
-                                    <a href="#" class="link-direction">
+                                    <a href="{{ url('/cart') }}" class="link-direction">
                                         <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                                         <div class="left-info">
                                             @auth
                                                 @if (Cart::count() > 0)
                                                     <span class="index">{{ Cart::count() }} Item</span>
+                                                @endif
+                                            @else
+                                                @if (Cart::count() > 0)
+                                                    <span class="index">Login to know</span>
+                                                @else
+                                                    <span class="index">0 Item</span>
                                                 @endif
                                             @endauth
                                             <span class="title">CART</span>
