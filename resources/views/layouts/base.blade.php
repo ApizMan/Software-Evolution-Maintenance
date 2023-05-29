@@ -50,7 +50,32 @@
             padding: 20px;
             border-radius: 10px;
         }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            text-align: left;
+            padding: 8px;
+        }
+
+        .avatar {
+            vertical-align: middle;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .column-avatar{
+            border-collapse: collapse;
+            width: 20%;
+        }
     </style>
+
 
     <!-- Modal Profile-->
     <div class="modal faded" id="profileModal" role="dialog">
@@ -60,17 +85,47 @@
                     <h1 class="modal-title fs-5" id="profileModalLabel"></h1>
                     <button type="button" class="btn btn-primary" style="background-color: #1068eb;">View Schedule
                         Duty</button>
-                    <button type="button" class="btn btn-danger" style=" float: right;">Logout <i
-                            class="fa fa-power-off"></i></button>
-
+                    <button type="button" class="btn btn-danger" style=" float: right;"><i class="fa fa-power-off"><a
+                                href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                style="color: white;">&nbsp;Logout</a></i></button>
+                    <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                        @csrf
+                    </form>
                 </div>
                 <div class="modal-body">
-                    <div class="banner-countdown">
+                    <!-- Profile with Image  -->
+                    <div class="modal-body">
+                        <div class="banner-countdown">
+                            <table>
+                                <tr>
+                                    <th class="column-avatar"><img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg"
+                                            alt="Avatar" class="avatar"></th>
+                                    <th><h5><b>Mr. Hassan Magdy</b></h5></th>
+                                </tr>
+                                <tr>
+                                    <td class="column-avatar"></td>
+                                    <td><p>Cashier <br><br>
+                                        Email: hassan@gmail.com <br>
+                                        No Phone: 018-4643504 <br>
+                                    </p></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Profile Details  -->
+                    <div class="modal-body">
+                        <div class="banner-countdown">
+                            <h5><b>Profile Details</b></h5>
+                            <p>Faculty: FKOM <br>
+                                Course: BCS <br>
+                            </p>
+
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
@@ -134,9 +189,9 @@
                                         @if (Auth::user()->utype === 'ADM')
                                             <li class="menu-item menu-item-has-children parent">
                                                 <a title="My Account" href="#">My Account
-                                                    ({{ Auth::user()->name }}){{--<i class="fa fa-angle-down"
-                                                        aria-hidden="true"></i></a>--}}
-                                                {{-- <ul class="submenu curency">
+                                                    ({{ Auth::user()->name }}){{-- <i class="fa fa-angle-down"
+                                                        aria-hidden="true"></i></a> --}}
+                                                    {{-- <ul class="submenu curency">
                                                     <li class="menu-item">
                                                         <a title="Dashboard"
                                                             href="{{ route('admin.dashboard') }}">Dashboard</a>
@@ -154,9 +209,9 @@
                                         @else
                                             <li class="menu-item menu-item-has-children parent">
                                                 <a title="My Account" href="#">My Account
-                                                    ({{ Auth::user()->name }}){{--<i class="fa fa-angle-down"
-                                                        aria-hidden="true"></i></a>--}}
-                                                {{-- <ul class="submenu curency">
+                                                    ({{ Auth::user()->name }}){{-- <i class="fa fa-angle-down"
+                                                        aria-hidden="true"></i></a> --}}
+                                                    {{-- <ul class="submenu curency">
                                                     <li class="menu-item">
                                                         <a title="Dashboard"
                                                             href="{{ route('user.dashboard') }}">Dashboard</a>
@@ -175,8 +230,8 @@
                                     @else
                                         <li class="menu-item"><a title="Register or Login"
                                                 href="{{ route('login') }}">Login</a></li>
-                                        {{-- <li class="menu-item"><a title="Register or Login"
-                                                href="{{ route('register') }}">Register</a></li> --}}
+                                        <!-- <li class="menu-item"><a title="Register or Login"
+                                                            href="{{ route('register') }}">Register</a></li> -->
                                     @endif
                                     @endif
                                 </ul>
