@@ -23,57 +23,58 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/color-01.css') }}">
     @livewireStyles
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-  <style>
-    .modal-header {
-    padding:9px 15px;
-    border-bottom:1px solid #eee;
-    background-color: #3fbddd;
-    -webkit-border-top-left-radius: 5px;
-    -webkit-border-top-right-radius: 5px;
-    -moz-border-radius-topleft: 5px;
-    -moz-border-radius-topright: 5px;
-     border-top-left-radius: 5px;
-     border-top-right-radius: 5px;
- }
+    <style>
+        .modal-header {
+            padding: 9px 15px;
+            border-bottom: 1px solid #eee;
+            background-color: #3fbddd;
+            -webkit-border-top-left-radius: 5px;
+            -webkit-border-top-right-radius: 5px;
+            -moz-border-radius-topleft: 5px;
+            -moz-border-radius-topright: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
 
- .banner-countdown {
-                position: relative;
-                left: 2px;
-                width: 80%;
-                height: 40%;
-                margin: 0 auto;
-                background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  border-radius: 10px;
-            }
-  </style>
+        .banner-countdown {
+            position: relative;
+            left: 2px;
+            width: 80%;
+            height: 40%;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
 
     <!-- Modal Profile-->
-    <div class="modal faded" id="profileModal"  role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="profileModalLabel"></h1>
-                <button type="button" class="btn btn-primary" style="background-color: #1068eb;">View Schedule Duty</button>
-                <button type="button" class="btn btn-danger" style=" float: right;">Logout <i class="fa fa-power-off"></i></button>
+    <div class="modal faded" id="profileModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="profileModalLabel"></h1>
+                    <button type="button" class="btn btn-primary" style="background-color: #1068eb;">View Schedule
+                        Duty</button>
+                    <button type="button" class="btn btn-danger" style=" float: right;">Logout <i
+                            class="fa fa-power-off"></i></button>
 
-            </div>
-            <div class="modal-body">
-                <div class="banner-countdown">
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary"
-                    data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <div class="modal-body">
+                    <div class="banner-countdown">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </head>
 
 <body class="home-page home-01 ">
@@ -133,9 +134,9 @@
                                         @if (Auth::user()->utype === 'ADM')
                                             <li class="menu-item menu-item-has-children parent">
                                                 <a title="My Account" href="#">My Account
-                                                    ({{ Auth::user()->name }})<i class="fa fa-angle-down"
-                                                        aria-hidden="true"></i></a>
-                                                <ul class="submenu curency">
+                                                    ({{ Auth::user()->name }}){{--<i class="fa fa-angle-down"
+                                                        aria-hidden="true"></i></a>--}}
+                                                {{-- <ul class="submenu curency">
                                                     <li class="menu-item">
                                                         <a title="Dashboard"
                                                             href="{{ route('admin.dashboard') }}">Dashboard</a>
@@ -148,14 +149,14 @@
                                                         action="{{ route('logout') }}">
                                                         @csrf
                                                     </form>
-                                                </ul>
+                                                </ul> --}}
                                             </li>
                                         @else
                                             <li class="menu-item menu-item-has-children parent">
                                                 <a title="My Account" href="#">My Account
-                                                    ({{ Auth::user()->name }})<i class="fa fa-angle-down"
-                                                        aria-hidden="true"></i></a>
-                                                <ul class="submenu curency">
+                                                    ({{ Auth::user()->name }}){{--<i class="fa fa-angle-down"
+                                                        aria-hidden="true"></i></a>--}}
+                                                {{-- <ul class="submenu curency">
                                                     <li class="menu-item">
                                                         <a title="Dashboard"
                                                             href="{{ route('user.dashboard') }}">Dashboard</a>
@@ -168,7 +169,7 @@
                                                         action="{{ route('logout') }}">
                                                         @csrf
                                                     </form>
-                                                </ul>
+                                                </ul> --}}
                                             </li>
                                         @endif
                                     @else
@@ -227,9 +228,17 @@
                                     <a href="{{ url('/cart') }}" class="link-direction">
                                         <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                                         <div class="left-info">
-                                            @if (Cart::count() > 0)
-                                                <span class="index">{{ Cart::count() }} Item</span>
-                                            @endif
+                                            @auth
+                                                @if (Cart::count() > 0)
+                                                    <span class="index">{{ Cart::count() }} Item</span>
+                                                @endif
+                                            @else
+                                                @if (Cart::count() > 0)
+                                                    <span class="index">Login to know</span>
+                                                @else
+                                                    <span class="index">0 Item</span>
+                                                @endif
+                                            @endauth
                                             <span class="title">CART</span>
                                         </div>
                                     </a>
