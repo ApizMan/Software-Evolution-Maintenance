@@ -1,4 +1,3 @@
-<a href="/">
     <svg {{ $attributes }} @class(['w-2 h-8' => !$iconOnly, 'w-8 h-8 mx-auto' => $iconOnly])class="w-2 h-8" @if ($iconOnly)
         viewBox="0 0 40 40"
     @else
@@ -9,14 +8,13 @@
             <table>
                 <tr>
                     <td>
-                        <img src="{{ asset('assets/images/logo-PETAKOM.png') }}" style="height: 60px; width: 60px;">
+                        <a href="/"><img src="{{ asset('assets/images/logo-PETAKOM.png') }}" style="height: 60px; width: 60px;"></a>
                     </td>
                     <td>
-                        <h1 style="font-weight: 600; color: rgba(0, 119, 255, 0.699); user-select: none;">Petakom Mart</h1>
+                        <a href="/"><h1 style="font-weight: 600; color: rgba(0, 119, 255, 0.699); user-select: none;">Petakom Mart</h1></a>
                     </td>
                 </tr>
             </table>
         </center>
         @endif
     </svg>
-</a>

@@ -39,3 +39,4 @@ class Products extends Seeder
         }
     }
 }
+
