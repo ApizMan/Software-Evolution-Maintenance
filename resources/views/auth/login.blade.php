@@ -143,7 +143,7 @@
                                                 <label for="checkbox_toggle"
                                                     class="text"><a href="/user/dashboard" style="color: black;">Cashier</a>&nbsp;&nbsp;&nbsp;&nbsp;</label>
                                                 <label for="checkbox_toggle"
-                                                    class="text"><a href="/admin/dashboard" style="color: black;">Admin</a>&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                                    class="text"><a href="/hub" style="color: black;">Admin</a>&nbsp;&nbsp;&nbsp;&nbsp;</label>
                                             </label>
                                         </div>
                                     </center>
