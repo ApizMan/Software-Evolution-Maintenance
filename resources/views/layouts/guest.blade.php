@@ -144,6 +144,8 @@
                                     @else
                                         <li class="menu-item"><a title="Register or Login"
                                                 href="{{ route('login') }}">Login</a></li>
+                                                <li class="menu-item"><a title="Register or Login"
+                                                    href="/hub">Login as Admin</a></li>
                                         {{-- <li class="menu-item" ><a title="Register or Login" href="{{ route('register') }}">Register</a></li> --}}
                                     @endif
                                     @endif

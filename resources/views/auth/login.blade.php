@@ -136,7 +136,7 @@
                                 <x-jet-validation-errors class="mb-4" />
                                 <form name="frm-login" method="POST" action="{{ route('login') }}">
                                     @csrf
-                                    <center><input class="check" type="checkbox" id="checkbox_toggle">
+                                    {{-- <center><input class="check" type="checkbox" id="checkbox_toggle">
                                         <div class="checkbox">
                                             <label for="checkbox_toggle" class="slide">
                                                 <label for="checkbox_toggle" class="toggle"></label>
@@ -146,7 +146,7 @@
                                                     class="text"><a href="/hub" style="color: black;">Admin</a>&nbsp;&nbsp;&nbsp;&nbsp;</label>
                                             </label>
                                         </div>
-                                    </center>
+                                    </center> --}}
                                     <fieldset class="wrap-title">
 
                                         <h3 class="form-title">Log in to your account</h3>

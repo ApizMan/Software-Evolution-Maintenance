@@ -70,7 +70,7 @@
             border-radius: 50%;
         }
 
-        .column-avatar{
+        .column-avatar {
             border-collapse: collapse;
             width: 20%;
         }
@@ -99,16 +99,21 @@
                         <div class="banner-countdown">
                             <table>
                                 <tr>
-                                    <th class="column-avatar"><img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg"
+                                    <th class="column-avatar"><img
+                                            src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg"
                                             alt="Avatar" class="avatar"></th>
-                                    <th><h5><b>Mr. Hassan Magdy</b></h5></th>
+                                    <th>
+                                        <h5><b>Mr. Hassan Magdy</b></h5>
+                                    </th>
                                 </tr>
                                 <tr>
                                     <td class="column-avatar"></td>
-                                    <td><p>Cashier <br><br>
-                                        Email: hassan@gmail.com <br>
-                                        No Phone: 018-4643504 <br>
-                                    </p></td>
+                                    <td>
+                                        <p>Cashier <br><br>
+                                            Email: hassan@gmail.com <br>
+                                            No Phone: 018-4643504 <br>
+                                        </p>
+                                    </td>
                                 </tr>
                             </table>
                         </div>
@@ -230,8 +235,10 @@
                                     @else
                                         <li class="menu-item"><a title="Register or Login"
                                                 href="{{ route('login') }}">Login</a></li>
+                                        <li class="menu-item"><a title="Register or Login"
+                                                href="/hub">Login as Admin</a></li>
                                         <!-- <li class="menu-item"><a title="Register or Login"
-                                                            href="{{ route('register') }}">Register</a></li> -->
+                                                                href="{{ route('register') }}">Register</a></li> -->
                                     @endif
                                     @endif
                                 </ul>

@@ -8,10 +8,10 @@
             <table>
                 <tr>
                     <td>
-                        <a href="/"><img src="{{ asset('assets/images/logo-PETAKOM.png') }}" style="height: 60px; width: 60px;"></a>
+                        <a href="/hub"><img src="{{ asset('assets/images/logo-PETAKOM.png') }}" style="height: 60px; width: 60px;"></a>
                     </td>
                     <td>
-                        <a href="/"><h1 style="font-weight: 600; color: rgba(0, 119, 255, 0.699); user-select: none;">Petakom Mart</h1></a>
+                        <a href="/hub"><h1 style="font-weight: 600; color: rgba(0, 119, 255, 0.699); user-select: none;">Petakom Mart</h1></a>
                     </td>
                 </tr>
             </table>
