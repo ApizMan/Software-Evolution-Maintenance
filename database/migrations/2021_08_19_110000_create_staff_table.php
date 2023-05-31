@@ -11,11 +11,11 @@ class CreateStaffTable extends Migration
         Schema::create($this->prefix.'staff', function (Blueprint $table) {
             $table->id();
             $table->boolean('admin')->default(false)->index();
-            $table->string('firstname')->index();
-            $table->string('lastname')->index();
-            $table->string('email')->unique();
+            $table->string('firstname')->index()->references('id')->on('users')->onDelete('cascade');
+            $table->string('lastname')->index()->references('id')->on('users')->onDelete('cascade');
+            $table->string('email')->unique()->references('id')->on('users')->onDelete('cascade');
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password')->references('id')->on('users')->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

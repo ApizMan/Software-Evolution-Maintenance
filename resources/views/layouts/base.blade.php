@@ -193,7 +193,8 @@
                                     @auth
                                         @if (Auth::user()->utype === 'ADM')
                                             <li class="menu-item menu-item-has-children parent">
-                                                <a title="My Account" href="#">My Account
+                                                <a title="My Account" href="#Profile" data-toggle="modal"
+                                                data-target="#profileModal">My Account
                                                     ({{ Auth::user()->name }}){{-- <i class="fa fa-angle-down"
                                                         aria-hidden="true"></i></a> --}}
                                                     {{-- <ul class="submenu curency">
@@ -213,7 +214,8 @@
                                             </li>
                                         @else
                                             <li class="menu-item menu-item-has-children parent">
-                                                <a title="My Account" href="#">My Account
+                                                <a title="My Account" href="#Profile" data-toggle="modal"
+                                                data-target="#profileModal">My Account
                                                     ({{ Auth::user()->name }}){{-- <i class="fa fa-angle-down"
                                                         aria-hidden="true"></i></a> --}}
                                                     {{-- <ul class="submenu curency">
@@ -266,7 +268,7 @@
                             <div class="wrap-icon right-section">
                                 @auth
                                     <div class="wrap-icon-section wishlist">
-                                        <a href="#" class="link-direction" data-toggle="modal"
+                                        <a href="#Profile" class="link-direction" data-toggle="modal"
                                             data-target="#profileModal">
                                             <i class="fa fa-user" aria-hidden="true"></i>
                                             <div class="left-info">
