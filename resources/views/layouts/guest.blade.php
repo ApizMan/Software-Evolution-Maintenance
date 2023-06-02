@@ -144,6 +144,8 @@
                                     @else
                                         <li class="menu-item"><a title="Register or Login"
                                                 href="{{ route('login') }}">Login</a></li>
+                                                <li class="menu-item"><a title="Register or Login"
+                                                    href="/hub">Login as Admin</a></li>
                                         {{-- <li class="menu-item" ><a title="Register or Login" href="{{ route('register') }}">Register</a></li> --}}
                                     @endif
                                     @endif
@@ -221,10 +223,20 @@
                                 @endauth
 
                                 <div class="wrap-icon-section minicart">
-                                    <a href="#" class="link-direction">
+                                    <a href="{{ url('/cart') }}" class="link-direction">
                                         <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                                         <div class="left-info">
-                                            <span class="index">4 items</span>
+                                            @auth
+                                                @if (Cart::count() > 0)
+                                                    <span class="index">{{ Cart::count() }} Item</span>
+                                                @endif
+                                            @else
+                                                @if (Cart::count() > 0)
+                                                    <span class="index">Login to know</span>
+                                                @else
+                                                    <span class="index">0 Item</span>
+                                                @endif
+                                            @endauth
                                             <span class="title">CART</span>
                                         </div>
                                     </a>
@@ -277,10 +289,10 @@
                                     <li class="menu-item">
                                         <a href="{{ url('/cart') }}" class="link-term mercado-item-title">Cart</a>
                                     </li>
-                                    <li class="menu-item">
+                                    {{-- <li class="menu-item">
                                         <a href="{{ url('/checkout') }}"
                                             class="link-term mercado-item-title">Checkout</a>
-                                    </li>
+                                    </li> --}}
                                     <li class="menu-item">
                                         <a href="{{ url('/contact-us') }}" class="link-term mercado-item-title">Contact
                                             Us</a>
