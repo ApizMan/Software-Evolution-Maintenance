@@ -37,7 +37,7 @@ Route::get('/', HomeComponent::class);
 
 Route::get('/shop', ShopComponent::class);
 
-Route::get('/cart', CartComponent::class)->name('product.cart');
+// Route::get('/cart', CartComponent::class)->name('product.cart');
 
 Route::get('/checkout', CheckoutComponent::class);
 
@@ -72,4 +72,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
 // Dashboard particular para administradores
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
+});
+
+Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+    // Route::get('/cart', CheckoutComponent::class)->name('checkout-component');
+    Route::get('/cart', CartComponent::class)->name('product.cart');
 });

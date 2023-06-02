@@ -23,44 +23,110 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/color-01.css') }}">
     @livewireStyles
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-  <style>
-    .modal-header {
-    padding:9px 15px;
-    border-bottom:1px solid #eee;
-    background-color: #3fbddd;
-    -webkit-border-top-left-radius: 5px;
-    -webkit-border-top-right-radius: 5px;
-    -moz-border-radius-topleft: 5px;
-    -moz-border-radius-topright: 5px;
-     border-top-left-radius: 5px;
-     border-top-right-radius: 5px;
- }
+    <style>
+        .modal-header {
+            padding: 9px 15px;
+            border-bottom: 1px solid #eee;
+            background-color: #3fbddd;
+            -webkit-border-top-left-radius: 5px;
+            -webkit-border-top-right-radius: 5px;
+            -moz-border-radius-topleft: 5px;
+            -moz-border-radius-topright: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
 
- .banner-countdown {
-                position: relative;
-                left: 2px;
-                width: 80%;
-                height: 40%;
-                margin: 0 auto;
-                background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  border-radius: 10px;
-            }
-  </style>
+        .banner-countdown {
+            position: relative;
+            left: 2px;
+            width: 80%;
+            height: 40%;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            text-align: left;
+            padding: 8px;
+        }
+
+        .avatar {
+            vertical-align: middle;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .column-avatar {
+            border-collapse: collapse;
+            width: 20%;
+        }
+    </style>
+
 
     <!-- Modal Profile-->
-    <div class="modal faded" id="profileModal"  role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="profileModalLabel"></h1>
-                <button type="button" class="btn btn-primary" style="background-color: #1068eb;">View Schedule Duty</button>
-                <button type="button" class="btn btn-danger" style=" float: right;">Logout <i class="fa fa-power-off"></i></button>
+    <div class="modal faded" id="profileModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="profileModalLabel"></h1>
+                    <button type="button" class="btn btn-primary" style="background-color: #1068eb;">View Schedule
+                        Duty</button>
+                    <button type="button" class="btn btn-danger" style=" float: right;"><i class="fa fa-power-off"><a
+                                href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                style="color: white;">&nbsp;Logout</a></i></button>
+                    <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                        @csrf
+                    </form>
+                </div>
+                <div class="modal-body">
+                    <!-- Profile with Image  -->
+                    <div class="modal-body">
+                        <div class="banner-countdown">
+                            <table>
+                                <tr>
+                                    <th class="column-avatar"><img
+                                            src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg"
+                                            alt="Avatar" class="avatar"></th>
+                                    <th>
+                                        <h5><b>Mr. Hassan Magdy</b></h5>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td class="column-avatar"></td>
+                                    <td>
+                                        <p>Cashier <br><br>
+                                            Email: hassan@gmail.com <br>
+                                            No Phone: 018-4643504 <br>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Profile Details  -->
+                    <div class="modal-body">
+                        <div class="banner-countdown">
+                            <h5><b>Profile Details</b></h5>
+                            <p>Faculty: FKOM <br>
+                                Course: BCS <br>
+                            </p>
 
+<<<<<<< HEAD
             </div>
             <!-- Profile with Image  -->
             <div class="modal-body">
@@ -70,26 +136,25 @@
 
                         Email: hassan@gmail.com
                         </p>
+=======
+                        </div>
+                    </div>
+>>>>>>> beff20d079528badb2f78dbf187ba5e3ea997223
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
-            <!-- Profile Details  -->
-            <div class="modal-body">
-                <div class="banner-countdown">
-                        <h5><b>Profile Details</b></h5>
-                        <p>Faculty: FKOM <br>
-                        Course: BCS <br>
-                        </p>
-                        
-                </div>
-            </div>
+<<<<<<< HEAD
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary"
                     data-dismiss="modal">Close</button>
                 <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
             </div>
+=======
+>>>>>>> beff20d079528badb2f78dbf187ba5e3ea997223
         </div>
     </div>
-</div>
 </head>
 
 <body class="home-page home-01 ">
@@ -148,10 +213,11 @@
                                     @auth
                                         @if (Auth::user()->utype === 'ADM')
                                             <li class="menu-item menu-item-has-children parent">
-                                                <a title="My Account" href="#">My Account
-                                                    ({{ Auth::user()->name }})<i class="fa fa-angle-down"
-                                                        aria-hidden="true"></i></a>
-                                                <ul class="submenu curency">
+                                                <a title="My Account" href="#Profile" data-toggle="modal"
+                                                data-target="#profileModal">My Account
+                                                    ({{ Auth::user()->name }}){{-- <i class="fa fa-angle-down"
+                                                        aria-hidden="true"></i></a> --}}
+                                                    {{-- <ul class="submenu curency">
                                                     <li class="menu-item">
                                                         <a title="Dashboard"
                                                             href="{{ route('admin.dashboard') }}">Dashboard</a>
@@ -164,14 +230,15 @@
                                                         action="{{ route('logout') }}">
                                                         @csrf
                                                     </form>
-                                                </ul>
+                                                </ul> --}}
                                             </li>
                                         @else
                                             <li class="menu-item menu-item-has-children parent">
-                                                <a title="My Account" href="#">My Account
-                                                    ({{ Auth::user()->name }})<i class="fa fa-angle-down"
-                                                        aria-hidden="true"></i></a>
-                                                <ul class="submenu curency">
+                                                <a title="My Account" href="#Profile" data-toggle="modal"
+                                                data-target="#profileModal">My Account
+                                                    ({{ Auth::user()->name }}){{-- <i class="fa fa-angle-down"
+                                                        aria-hidden="true"></i></a> --}}
+                                                    {{-- <ul class="submenu curency">
                                                     <li class="menu-item">
                                                         <a title="Dashboard"
                                                             href="{{ route('user.dashboard') }}">Dashboard</a>
@@ -184,14 +251,16 @@
                                                         action="{{ route('logout') }}">
                                                         @csrf
                                                     </form>
-                                                </ul>
+                                                </ul> --}}
                                             </li>
                                         @endif
                                     @else
                                         <li class="menu-item"><a title="Register or Login"
                                                 href="{{ route('login') }}">Login</a></li>
-                                         <!-- <li class="menu-item"><a title="Register or Login"
-                                                href="{{ route('register') }}">Register</a></li> -->
+                                        <li class="menu-item"><a title="Register or Login"
+                                                href="/hub">Login as Admin</a></li>
+                                        <!-- <li class="menu-item"><a title="Register or Login"
+                                                                href="{{ route('register') }}">Register</a></li> -->
                                     @endif
                                     @endif
                                 </ul>
@@ -219,7 +288,7 @@
                             <div class="wrap-icon right-section">
                                 @auth
                                     <div class="wrap-icon-section wishlist">
-                                        <a href="#" class="link-direction" data-toggle="modal"
+                                        <a href="#Profile" class="link-direction" data-toggle="modal"
                                             data-target="#profileModal">
                                             <i class="fa fa-user" aria-hidden="true"></i>
                                             <div class="left-info">
@@ -243,10 +312,17 @@
                                     <a href="{{ url('/cart') }}" class="link-direction">
                                         <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                                         <div class="left-info">
-                                            @if (Cart::count() > 0)
-                                                <span class="index">{{ Cart::count() }}</span>
-                                            @endif
-                                            <span class="index">0 item</span>
+                                            @auth
+                                                @if (Cart::count() > 0)
+                                                    <span class="index">{{ Cart::count() }} Item</span>
+                                                @endif
+                                            @else
+                                                @if (Cart::count() > 0)
+                                                    <span class="index">Login to know</span>
+                                                @else
+                                                    <span class="index">0 Item</span>
+                                                @endif
+                                            @endauth
                                             <span class="title">CART</span>
                                         </div>
                                     </a>
@@ -268,15 +344,14 @@
                             <div class="container">
                                 <ul class="nav menu-nav clone-main-menu" id="mercado_haead_menu"
                                     data-menuname="Sale Info">
-                                    <li class="menu-item"><a href="#" class="link-term"><i class="fa fa-bars"></i>
-                                            All Category</a></li>
-                                    <li class="menu-item"><a href="#" class="link-term">Hot Offer</a><span
+                                    <li class="menu-item"><a class="link-term"></a></li>
+                                    <li class="menu-item"><a href="/#section1" class="link-term">Weekly Featured</a><span
                                             class="nav-label hot-label">hot</span></li>
-                                    <li class="menu-item"><a href="#" class="link-term">Gift Boxes</a><span
+                                    <li class="menu-item"><a href="/#section2" class="link-term">Hot Sale items</a><span
                                             class="nav-label hot-label">hot</span></li>
-                                    <li class="menu-item"><a href="#" class="link-term">Projects</a><span
+                                    <li class="menu-item"><a href="/#section3" class="link-term">Top new items</a><span
                                             class="nav-label hot-label">hot</span></li>
-                                    <li class="menu-item"><a href="#" class="link-term">Menu Item</a><span
+                                    <li class="menu-item"><a href="/#section4" class="link-term">Categories</a><span
                                             class="nav-label hot-label">hot</span></li>
                                 </ul>
                             </div>
