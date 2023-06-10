@@ -32,8 +32,8 @@ class Products extends Seeder
                 'stock_status' => $faker->randomElement(['instock', 'outofstock']),
                 // 'featured' => $faker->randomElement(['Yes', 'No']),
                 'quantity' => $faker->randomDigit,
-                'image' => $faker->image('public/assets/images/products', 400, 300, null, false),
-                'images' => $faker->image('public/assets/images/products', 400, 300, null, false),
+                'image' => $faker->randomElement(['digital_1.jpg', 'digital_01.jpg', 'digital_2.jpg', 'digital_02.jpg', 'digital_3.jpg', 'digital_03.jpg', 'digital_4.jpg', 'digital_04.jpg', 'digital_5.jpg', 'digital_05.jpg', 'digital_6.jpg', 'digital_06.jpg', 'digital_7.jpg', 'digital_07.jpg', 'digital_8.jpg', 'digital_08.jpg', 'digital_9.jpg', 'digital_09.jpg', 'digital_10.jpg']),
+                'images' => $faker->randomElement(['digital_1.jpg', 'digital_01.jpg', 'digital_2.jpg', 'digital_02.jpg', 'digital_3.jpg', 'digital_03.jpg', 'digital_4.jpg', 'digital_04.jpg', 'digital_5.jpg', 'digital_05.jpg', 'digital_6.jpg', 'digital_06.jpg', 'digital_7.jpg', 'digital_07.jpg', 'digital_8.jpg', 'digital_08.jpg', 'digital_9.jpg', 'digital_09.jpg', 'digital_10.jpg']),
                 'category_id' => $faker->randomElement(Category::all())['id'],
             ]);
         }

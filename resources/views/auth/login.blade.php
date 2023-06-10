@@ -174,7 +174,7 @@
                                     <input type="submit" class="btn btn-submit" value="Login" name="submit">
                                 </form>
                                 <center>
-                                    <p>View as <a href="" style="font-weight: 800;">Coordinator</a></p>
+                                    <p>View as <a href="/report" style="font-weight: 800;">Coordinator</a></p>
 
                                 </center>
                             </div>

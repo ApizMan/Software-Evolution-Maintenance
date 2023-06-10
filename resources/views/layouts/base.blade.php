@@ -194,7 +194,7 @@
                                         @if (Auth::user()->utype === 'ADM')
                                             <li class="menu-item menu-item-has-children parent">
                                                 <a title="My Account" href="#Profile" data-toggle="modal"
-                                                data-target="#profileModal">My Account
+                                                    data-target="#profileModal">My Account
                                                     ({{ Auth::user()->name }}){{-- <i class="fa fa-angle-down"
                                                         aria-hidden="true"></i></a> --}}
                                                     {{-- <ul class="submenu curency">
@@ -215,7 +215,7 @@
                                         @else
                                             <li class="menu-item menu-item-has-children parent">
                                                 <a title="My Account" href="#Profile" data-toggle="modal"
-                                                data-target="#profileModal">My Account
+                                                    data-target="#profileModal">My Account
                                                     ({{ Auth::user()->name }}){{-- <i class="fa fa-angle-down"
                                                         aria-hidden="true"></i></a> --}}
                                                     {{-- <ul class="submenu curency">
@@ -237,10 +237,17 @@
                                     @else
                                         <li class="menu-item"><a title="Register or Login"
                                                 href="{{ route('login') }}">Login</a></li>
-                                        <li class="menu-item"><a title="Register or Login"
-                                                href="/hub">Login as Admin</a></li>
-                                        <!-- <li class="menu-item"><a title="Register or Login"
-                                                                href="{{ route('register') }}">Register</a></li> -->
+                                        @if (Auth::guard('staff')->user())
+                                            <li class="menu-item"><a title="Register or Login" href="/hub">View as
+                                                    Admin</a></li>
+                                        @else
+                                            <li class="menu-item"><a title="Register or Login" href="/hub">Log as
+                                                    Admin</a></li>
+                                        @endif
+
+
+                                        {{-- <li class="menu-item"><a title="Register or Login"
+                                                                href="{{ route('register') }}">Register</a></li> --}}
                                     @endif
                                     @endif
                                 </ul>
@@ -354,14 +361,6 @@
                                     <li class="menu-item">
                                         <a href="{{ url('/cart') }}" class="link-term mercado-item-title">Cart</a>
                                     </li>
-                                    {{-- <li class="menu-item">
-                                        <a href="{{ url('/checkout') }}"
-                                            class="link-term mercado-item-title">Checkout</a>
-                                    </li> --}}
-                                    <li class="menu-item">
-                                        <a href="{{ url('/contact-us') }}" class="link-term mercado-item-title">Contact
-                                            Us</a>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -371,6 +370,8 @@
         </header>
 
         {{ $slot }}
+
+        @yield('content')
 
         <footer id="footer">
             <div class="wrap-footer-content footer-style-1">

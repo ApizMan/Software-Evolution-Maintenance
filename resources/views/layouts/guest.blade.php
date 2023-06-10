@@ -1,28 +1,3 @@
-{{-- <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset(mix('css/app.css')) }}">
-
-        <!-- Scripts -->
-        <script src="{{ asset(mix('js/app.js')) }}" defer></script>
-    </head>
-    <body>
-        <div class="font-sans text-gray-900 antialiased">
-            {{ $slot }}
-        </div>
-    </body>
-</html> --}}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -165,39 +140,7 @@
                                 </a>
                             </div>
 
-                            <div class="wrap-search center-section">
-                                <div class="wrap-search-form">
-                                    <form action="#" id="form-search-top" name="form-search-top">
-                                        <input type="text" name="search" value=""
-                                            placeholder="Search here...">
-                                        <button form="form-search-top" type="button"><i class="fa fa-search"
-                                                aria-hidden="true"></i></button>
-                                        <div class="wrap-list-cate">
-                                            <input type="hidden" name="product-cate" value="0" id="product-cate">
-                                            <a href="#" class="link-control">All Category</a>
-                                            <ul class="list-cate">
-                                                <li class="level-0">All Category</li>
-                                                <li class="level-1">-Electronics</li>
-                                                <li class="level-2">Batteries & Chargens</li>
-                                                <li class="level-2">Headphone & Headsets</li>
-                                                <li class="level-2">Mp3 Player & Acessories</li>
-                                                <li class="level-1">-Smartphone & Table</li>
-                                                <li class="level-2">Batteries & Chargens</li>
-                                                <li class="level-2">Mp3 Player & Headphones</li>
-                                                <li class="level-2">Table & Accessories</li>
-                                                <li class="level-1">-Electronics</li>
-                                                <li class="level-2">Batteries & Chargens</li>
-                                                <li class="level-2">Headphone & Headsets</li>
-                                                <li class="level-2">Mp3 Player & Acessories</li>
-                                                <li class="level-1">-Smartphone & Table</li>
-                                                <li class="level-2">Batteries & Chargens</li>
-                                                <li class="level-2">Mp3 Player & Headphones</li>
-                                                <li class="level-2">Table & Accessories</li>
-                                            </ul>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+                            @livewire('header-search-component')
 
                             <div class="wrap-icon right-section">
                                 @auth
@@ -287,14 +230,6 @@
                                     </li>
                                     <li class="menu-item">
                                         <a href="{{ url('/cart') }}" class="link-term mercado-item-title">Cart</a>
-                                    </li>
-                                    {{-- <li class="menu-item">
-                                        <a href="{{ url('/checkout') }}"
-                                            class="link-term mercado-item-title">Checkout</a>
-                                    </li> --}}
-                                    <li class="menu-item">
-                                        <a href="{{ url('/contact-us') }}" class="link-term mercado-item-title">Contact
-                                            Us</a>
                                     </li>
                                 </ul>
                             </div>
