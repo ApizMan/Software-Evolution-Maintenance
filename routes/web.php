@@ -107,3 +107,6 @@ $slot->addItem(function ($item) {
 Route::get('/dutySchedule', dutySchedule::class)->name('duty_schedule.duty_schedule');
 
 // Route::get('/home-e-commerce', Home::class)->name('home.home-component');
+Route::get('/phpinfo', function() {
+    return phpinfo();
+});
