@@ -27,7 +27,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <style>
-        .modal-header {
+        .modal-header { 
             padding: 9px 15px;
             border-bottom: 1px solid #eee;
             background-color: #3fbddd;
@@ -77,20 +77,6 @@
     </style>
 
 
-<<<<<<< HEAD
-    <!-- Modal git -->
-    <div class="modal faded" id="profileModal"  role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="profileModalLabel"></h1>
-                <button type="button" class="btn btn-primary" style="background-color: #1068eb;">View Schedule Duty</button>
-                <button type="button" class="btn btn-danger" style=" float: right;">Logout <i class="fa fa-power-off"></i></button>
-
-            </div>
-            <div class="modal-body">
-                <div class="banner-countdown">
-=======
     <!-- Modal Profile-->
     <div class="modal faded" id="profileModal" role="dialog">
         <div class="modal-dialog">
@@ -145,7 +131,6 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
->>>>>>> beff20d079528badb2f78dbf187ba5e3ea997223
                 </div>
             </div>
         </div>
@@ -252,15 +237,10 @@
                                     @else
                                         <li class="menu-item"><a title="Register or Login"
                                                 href="{{ route('login') }}">Login</a></li>
-<<<<<<< HEAD
-                                        <!-- <li class="menu-item"><a title="Register or Login"
-                                                href="{{ route('register') }}">Register</a></li> -->
-=======
                                         <li class="menu-item"><a title="Register or Login"
                                                 href="/hub">Login as Admin</a></li>
-                                        <!-- <li class="menu-item"><a title="Register or Login"
-                                                                href="{{ route('register') }}">Register</a></li> -->
->>>>>>> beff20d079528badb2f78dbf187ba5e3ea997223
+                                        <li class="menu-item"><a title="Register or Login"
+                                                                href="{{ route('register') }}">Register</a></li>
                                     @endif
                                     @endif
                                 </ul>
