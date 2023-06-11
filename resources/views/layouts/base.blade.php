@@ -126,33 +126,13 @@
                                 Course: BCS <br>
                             </p>
 
-<<<<<<< HEAD
-            </div>
-            <!-- Profile with Image  -->
-            <div class="modal-body">
-                <div class="banner-countdown">
-                        <h5><b>Mr. Hassan Magdy</b></h5>
-                        <p>Cashier <br>
-
-                        Email: hassan@gmail.com
-                        </p>
-=======
                         </div>
                     </div>
->>>>>>> beff20d079528badb2f78dbf187ba5e3ea997223
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
-<<<<<<< HEAD
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary"
-                    data-dismiss="modal">Close</button>
-                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-            </div>
-=======
->>>>>>> beff20d079528badb2f78dbf187ba5e3ea997223
         </div>
     </div>
 </head>
