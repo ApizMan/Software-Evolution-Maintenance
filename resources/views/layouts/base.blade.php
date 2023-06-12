@@ -272,25 +272,29 @@
                                     </a>
                                 </div>
                             @endauth
-                            <div class="wrap-icon-section minicart">
-                                <a href="{{ url('/cart') }}" class="link-direction">
-                                    <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                                    <div class="left-info">
-                                        @auth
-                                            @if (Cart::count() > 0)
-                                                <span class="index">{{ Cart::count() }} Item</span>
-                                            @endif
-                                        @else
-                                            @if (Cart::count() > 0)
-                                                <span class="index">Login to know</span>
+                            @if (Auth::guard('staff')->user())
+                            @else
+                                <div class="wrap-icon-section minicart">
+                                    <a href="{{ url('/cart') }}" class="link-direction">
+                                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                        <div class="left-info">
+                                            @auth
+                                                @if (Cart::count() > 0)
+                                                    <span class="index">{{ Cart::count() }} Item</span>
+                                                @endif
                                             @else
-                                                <span class="index">0 Item</span>
-                                            @endif
-                                        @endauth
-                                        <span class="title">CART</span>
-                                    </div>
-                                </a>
-                            </div>
+                                                @if (Cart::count() > 0)
+                                                    <span class="index">Login to know</span>
+                                                @else
+                                                    <span class="index">0 Item</span>
+                                                @endif
+                                            @endauth
+                                            <span class="title">CART</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            @endif
+
                             <div class="wrap-icon-section show-up-after-1024">
                                 <a href="#" class="mobile-navigation">
                                     <span></span>
@@ -335,9 +339,13 @@
                                 <li class="menu-item">
                                     <a href="{{ url('/shop') }}" class="link-term mercado-item-title">Shop</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="{{ url('/cart') }}" class="link-term mercado-item-title">Cart</a>
-                                </li>
+                                @if (Auth::guard('staff')->user())
+                                @else
+                                    <li class="menu-item">
+                                        <a href="{{ url('/cart') }}" class="link-term mercado-item-title">Cart</a>
+                                    </li>
+                                @endif
+
                             </ul>
                         </div>
                     </div>
