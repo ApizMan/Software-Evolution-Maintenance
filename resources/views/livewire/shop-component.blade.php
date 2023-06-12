@@ -75,8 +75,7 @@
                                         <div class="wrap-price"><span
                                                 class="product-price">{{ $product->regular_price }}</span></div>
                                         @if (Auth::guard('staff')->user())
-                                            <a class="btn add-to-cart" href="#"
-                                                wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">View Product</a>
+                                            <a class="btn add-to-cart" href="{{ route('product.details', ['slug' => $product->slug]) }}">View Product</a>
                                         @else
                                             <a class="btn add-to-cart" href="#"
                                                 wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">Add
