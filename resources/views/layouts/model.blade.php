@@ -58,7 +58,7 @@
         <div class="banner-countdown">
             <table>
                 <tr>
-                    <a href="/hub"><button class="btn btn-danger">Back</button></a>
+                    <button onClick="history.back()" class="btn btn-danger">Back</button>
                 </tr>
             </table>
             @yield('content')
