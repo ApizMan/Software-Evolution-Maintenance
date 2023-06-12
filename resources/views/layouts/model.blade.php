@@ -58,10 +58,7 @@
         <div class="banner-countdown">
             <table>
                 <tr>
-                    <td><a href="/hub"><button class="btn btn-danger">Back</button></a></td>
-                    <td>
-                        <h1>Calender View Kat Sini</h1>
-                    </td>
+                    <a href="/hub"><button class="btn btn-danger">Back</button></a>
                 </tr>
             </table>
             @yield('content')
