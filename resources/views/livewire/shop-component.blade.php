@@ -58,22 +58,34 @@
                 <div class="row">
 
                     <ul class="product-list grid-products equal-container">
-                        @foreach ($products as $product)      
-                        <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
-                            <div class="product product-style-3 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="{{ route('product.details', ['slug' => $product->slug]) }}" title="{{ $product->name }}">
-                                        <figure><img src="{{ asset('assets/images/products') }}/{{ $product->image }}" alt="{{ $product->name }}"></figure>
-                                    </a>
+                        @foreach ($products as $product)
+                            <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
+                                <div class="product product-style-3 equal-elem ">
+                                    <div class="product-thumnail">
+                                        <a href="{{ route('product.details', ['slug' => $product->slug]) }}"
+                                            title="{{ $product->name }}">
+                                            <figure><img
+                                                    src="{{ asset('assets/images/products') }}/{{ $product->image }}"
+                                                    alt="{{ $product->name }}"></figure>
+                                        </a>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="{{ route('product.details', ['slug' => $product->slug]) }}"
+                                            class="product-name"><span>{{ $product->name }}</span></a>
+                                        <div class="wrap-price"><span
+                                                class="product-price">{{ $product->regular_price }}</span></div>
+                                        @if (Auth::guard('staff')->user())
+                                            <a class="btn add-to-cart" href="#"
+                                                wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">View Product</a>
+                                        @else
+                                            <a class="btn add-to-cart" href="#"
+                                                wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">Add
+                                                To Cart</a>
+                                        @endif
+                                    </div>
                                 </div>
-                                <div class="product-info">
-                                    <a href="{{ route('product.details', ['slug' => $product->slug]) }}" class="product-name"><span>{{ $product->name }}</span></a>
-                                    <div class="wrap-price"><span class="product-price">{{ $product->regular_price }}</span></div>
-                                    <a class="btn add-to-cart" href="#" wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">Add To Cart</a>
-                                </div>
-                            </div>
-                        </li>
-                        @endforeach   
+                            </li>
+                        @endforeach
                     </ul>
 
                 </div>
@@ -97,9 +109,10 @@
                     <div class="widget-content">
                         <ul class="list-category">
                             @foreach ($categories as $category)
-                            <li class="category-item">
-                                <a href="{{ route('product.category', ['category_slug' => $category->slug]) }}" class="cate-link">{{ $category->name }}</a>
-                            </li>
+                                <li class="category-item">
+                                    <a href="{{ route('product.category', ['category_slug' => $category->slug]) }}"
+                                        class="cate-link">{{ $category->name }}</a>
+                                </li>
                             @endforeach
                         </ul>
                     </div>
@@ -109,23 +122,30 @@
                     <h2 class="widget-title">Brand</h2>
                     <div class="widget-content">
                         <ul class="list-style vertical-list list-limited" data-show="6">
-                            <li class="list-item"><a class="filter-link active" href="#">Fashion Clothings</a></li>
+                            <li class="list-item"><a class="filter-link active" href="#">Fashion Clothings</a>
+                            </li>
                             <li class="list-item"><a class="filter-link " href="#">Laptop Batteries</a></li>
                             <li class="list-item"><a class="filter-link " href="#">Printer & Ink</a></li>
                             <li class="list-item"><a class="filter-link " href="#">CPUs & Prosecsors</a></li>
                             <li class="list-item"><a class="filter-link " href="#">Sound & Speaker</a></li>
-                            <li class="list-item"><a class="filter-link " href="#">Shop Smartphone & Tablets</a></li>
-                            <li class="list-item default-hiden"><a class="filter-link " href="#">Printer & Ink</a></li>
-                            <li class="list-item default-hiden"><a class="filter-link " href="#">CPUs & Prosecsors</a>
+                            <li class="list-item"><a class="filter-link " href="#">Shop Smartphone & Tablets</a>
                             </li>
-                            <li class="list-item default-hiden"><a class="filter-link " href="#">Sound & Speaker</a>
+                            <li class="list-item default-hiden"><a class="filter-link " href="#">Printer &
+                                    Ink</a>
                             </li>
-                            <li class="list-item default-hiden"><a class="filter-link " href="#">Shop Smartphone &
+                            <li class="list-item default-hiden"><a class="filter-link " href="#">CPUs &
+                                    Prosecsors</a>
+                            </li>
+                            <li class="list-item default-hiden"><a class="filter-link " href="#">Sound &
+                                    Speaker</a>
+                            </li>
+                            <li class="list-item default-hiden"><a class="filter-link " href="#">Shop
+                                    Smartphone &
                                     Tablets</a></li>
                             <li class="list-item"><a
                                     data-label='Show less<i class="fa fa-angle-up" aria-hidden="true"></i>'
-                                    class="btn-control control-show-more" href="#">Show more<i class="fa fa-angle-down"
-                                        aria-hidden="true"></i></a></li>
+                                    class="btn-control control-show-more" href="#">Show more<i
+                                        class="fa fa-angle-down" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
                 </div><!-- brand widget-->
@@ -146,12 +166,18 @@
                     <h2 class="widget-title">Color</h2>
                     <div class="widget-content">
                         <ul class="list-style vertical-list has-count-index">
-                            <li class="list-item"><a class="filter-link " href="#">Red <span>(217)</span></a></li>
-                            <li class="list-item"><a class="filter-link " href="#">Yellow <span>(179)</span></a></li>
-                            <li class="list-item"><a class="filter-link " href="#">Black <span>(79)</span></a></li>
-                            <li class="list-item"><a class="filter-link " href="#">Blue <span>(283)</span></a></li>
-                            <li class="list-item"><a class="filter-link " href="#">Grey <span>(116)</span></a></li>
-                            <li class="list-item"><a class="filter-link " href="#">Pink <span>(29)</span></a></li>
+                            <li class="list-item"><a class="filter-link " href="#">Red <span>(217)</span></a>
+                            </li>
+                            <li class="list-item"><a class="filter-link " href="#">Yellow
+                                    <span>(179)</span></a></li>
+                            <li class="list-item"><a class="filter-link " href="#">Black <span>(79)</span></a>
+                            </li>
+                            <li class="list-item"><a class="filter-link " href="#">Blue <span>(283)</span></a>
+                            </li>
+                            <li class="list-item"><a class="filter-link " href="#">Grey <span>(116)</span></a>
+                            </li>
+                            <li class="list-item"><a class="filter-link " href="#">Pink <span>(29)</span></a>
+                            </li>
                         </ul>
                     </div>
                 </div><!-- Color -->
@@ -177,21 +203,25 @@
                     <h2 class="widget-title">Popular Products</h2>
                     <div class="widget-content">
                         <ul class="products">
-                            @foreach ($popular_products as $p_product)  
-                            <li class="product-item">
-                                <div class="product product-widget-style">
-                                    <div class="thumbnnail">
-                                        <a href="{{ route('product.details', ['slug' => $p_product->slug]) }}"
-                                            title="{{ $p_product->name }}">
-                                            <figure><img src="{{ asset('assets/images/products') }}/{{ $p_product->image }}" alt="{{ $p_product->name }}"></figure>
-                                        </a>
+                            @foreach ($popular_products as $p_product)
+                                <li class="product-item">
+                                    <div class="product product-widget-style">
+                                        <div class="thumbnnail">
+                                            <a href="{{ route('product.details', ['slug' => $p_product->slug]) }}"
+                                                title="{{ $p_product->name }}">
+                                                <figure><img
+                                                        src="{{ asset('assets/images/products') }}/{{ $p_product->image }}"
+                                                        alt="{{ $p_product->name }}"></figure>
+                                            </a>
+                                        </div>
+                                        <div class="product-info">
+                                            <a href="{{ route('product.details', ['slug' => $p_product->slug]) }}"
+                                                class="product-name"><span>{{ $p_product->name }}</span></a>
+                                            <div class="wrap-price"><span
+                                                    class="product-price">{{ $p_product->regular_price }}</span></div>
+                                        </div>
                                     </div>
-                                    <div class="product-info">
-                                        <a href="{{ route('product.details', ['slug' => $p_product->slug]) }}" class="product-name"><span>{{ $p_product->name }}</span></a>
-                                        <div class="wrap-price"><span class="product-price">{{ $p_product->regular_price }}</span></div>
-                                    </div>
-                                </div>
-                            </li>
+                                </li>
                             @endforeach
                         </ul>
                     </div>

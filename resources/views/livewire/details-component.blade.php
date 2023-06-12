@@ -54,10 +54,6 @@
                         <div class="short-desc">
                             <span>{{ $product->short_description }}</span>
                         </div>
-                        <div class="wrap-social">
-                            <a class="link-socail" href="#"><img
-                                    src="{{ asset('assets/images/social-list.png') }}" alt=""></a>
-                        </div>
                         <div class="wrap-price"><span class="product-price">{{ $product->regular_price }}</span></div>
                         <div class="stock-info in-stock">
                             <p class="availability">Availability: @if ($product->stock_status == 'In Stock')
@@ -67,33 +63,44 @@
                                 @endif
                             </p>
                         </div>
-                        <div class="quantity">
-                            <span>Quantity:</span>
-                            <div class="quantity-input">
-                                <input type="text" name="product-quatity" value="1" data-max="120"
-                                    pattern="[0-9]*">
+                        @if (Auth::guard('staff')->user())
+                            <div class="quantity">
+                                <span>Quantity:</span>
+                                <div class="quantity-input" style="width: 70px">
+                                    <input type="text" name="product-quatity" value="{{$product->quantity}}"
+                                        pattern="[0-9]*" disabled>
+                                </div>
+                            </div>
+                        @else
+                            <div class="quantity">
+                                <span>Quantity:</span>
+                                <div class="quantity-input">
+                                    <input type="text" name="product-quatity" value="1" data-max="120"
+                                        pattern="[0-9]*">
 
-                                <a class="btn btn-reduce" href="#"></a>
-                                <a class="btn btn-increase" href="#"></a>
+                                    <a class="btn btn-reduce" href="#"></a>
+                                    <a class="btn btn-increase" href="#"></a>
+                                </div>
                             </div>
-                        </div>
                             @if ($product->stock_status == 'In Stock')
-                            <div class="wrap-butons">
-                                <a href="#" class="btn add-to-cart"
-                                    wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">Add
-                                    to Cart</a>
-                            </div>
+                                <div class="wrap-butons">
+                                    <a href="#" class="btn add-to-cart"
+                                        wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">Add
+                                        to Cart</a>
+                                </div>
                             @else
-                            <style>
-                                .wrap-button .add-to-cart:hover{
-                                    background: red;
-                                }
-                            </style>
-                            <div class="wrap-butons">
-                                <a href="#" class="btn add-to-cart">Add
-                                    to Cart</a>
-                            </div>
+                                <style>
+                                    .wrap-button .add-to-cart:hover {
+                                        background: red;
+                                    }
+                                </style>
+                                <div class="wrap-butons">
+                                    <a href="#" class="btn add-to-cart">Add
+                                        to Cart</a>
+                                </div>
                             @endif
+                        @endif
+
                     </div>
                     <div class="advance-info">
                         <div class="tab-control normal">
