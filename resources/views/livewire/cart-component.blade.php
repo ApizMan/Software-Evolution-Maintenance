@@ -1,5 +1,52 @@
 <main id="main" class="main-site">
 
+<!-- Modal Checkout-->
+    <div class="modal faded" id="checkoutModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="checkoutModalLabel"></h1>
+                </div>
+                <div class="modal-body">
+                    <!-- Profile with Image  -->
+                    <div class="modal-body">
+                        <div class="banner-countdown">
+                            <table>
+                                <tr>
+                                    <th class="column-avatar"><img
+                                            src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg"
+                                            alt="Avatar" class="avatar"></th>
+                                    <th>
+                                        <h5><b>Mr. Hassan Magdy</b></h5>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td class="column-avatar"></td>
+                                    <td>
+                                        <p>Cashier <br><br>
+                                            Email: hassan@gmail.com <br>
+                                            No Phone: 018-4643504 <br>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Profile Details  -->
+                    <div class="modal-body">
+                        <div class="banner-countdown">
+                            <h5><b>Profile Details</b></h5>
+                            <p>Faculty: FKOM <br>
+                                Course: BCS <br>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
 
         <div class="wrap-breadcrumb">
@@ -57,20 +104,14 @@
                     <p class="summary-info"><span class="title">Subtotal</span><b class="index">$ {{ Cart::subtotal() }}</b></p>
                     <p class="summary-info"><span class="title">Tax</span><b class="index">$ {{ Cart::tax() }}</b></p>
                     <p class="summary-info"><span class="title">Shipping</span><b class="index">Free Shipping</b></p>
-                    <p class="summary-info total-info "><span class="title">Total</span><b class="index">{{ Cart::total() }}</b></p>
                 </div>
                 <div class="checkout-info">
-                    <label class="checkbox-field">
-                        <input class="frm-input " name="have-code" id="have-code" value="" type="checkbox"><span>I have
-                            promo code</span>
-                    </label>
-                    <a class="btn btn-checkout" href="checkout.html">Check out</a>
+                    <a class="btn btn-checkout" href="#" data-toggle="modal" data-target="#checkoutModal">Check out</a>
                     <a class="link-to-shop" href="{{ url('/shop') }}">Continue Shopping<i class="fa fa-arrow-circle-right"
                             aria-hidden="true"></i></a>
                 </div>
                 <div class="update-clear">
                     <a class="btn btn-clear" href="#" wire:click.prevent="destroyAll()">Clear Shopping Cart</a>
-                    <a class="btn btn-update" href="#">Update Shopping Cart</a>
                 </div>
             </div>
 
