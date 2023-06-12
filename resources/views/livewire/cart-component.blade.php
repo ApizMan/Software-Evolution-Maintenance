@@ -1,5 +1,85 @@
 <main id="main" class="main-site">
 
+<!-- Modal Cash-->
+<div class="modal faded" id="cashModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="cashModalLabel"></h1>
+                </div>
+                <div class="modal-body">
+                    <!-- Profile with Image  -->
+                    <div class="modal-body">
+                        <div class="banner-countdown">
+                            <table>
+                             <style>
+                               h4 {text-align: center;}
+                               td {text-align: center;}
+                             </style>
+                                <tr>
+                                        <h4><b>Payment in progress</b></h4>
+                                </tr>
+                                <tr>
+                                    <td>
+                                      <button class="w3-button w3-green" data-dismiss="modal">Complete</button>
+                                    </td>
+                                </tr>
+                                <br><br>
+                                <tr>
+                                    <td>
+                                      <button class="w3-button w3-red" data-dismiss="modal">Cancel</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Modal QR-->
+<div class="modal faded" id="qrModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="qrModalLabel"></h1>
+                </div>
+                <div class="modal-body">
+                    <!-- Profile with Image  -->
+                    <div class="modal-body">
+                        <div class="banner-countdown">
+                            <table>
+                             <style>
+                               h4 {text-align: center;}
+                               tr {text-align: center;}
+                               td {text-align: center;}
+                             </style>
+                                <tr>
+                                        <h4><b>Payment in progress</b></h4>
+                                </tr>
+                                <tr>
+                                        <div>Time left = <span id="timer"></span>
+                                </tr>
+                                <tr>
+                                <img
+                                            src="https://www.iium.edu.my/media/68540/3.png"
+                                            alt="qr code" style="width:300px;height:400px;"> 
+                                </tr>
+                                <br><br>
+                                <tr>
+                                    <td>
+                                      <button class="w3-button w3-red" data-dismiss="modal">Close</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 <!-- Modal Checkout-->
     <div class="modal faded" id="checkoutModal" role="dialog">
         <div class="modal-dialog">
@@ -7,42 +87,39 @@
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="checkoutModalLabel"></h1>
                 </div>
-                <div class="modal-body">
-                    <!-- Profile with Image  -->
-                    <div class="modal-body">
-                        <div class="banner-countdown">
-                            <table>
-                                <tr>
-                                    <th class="column-avatar"><img
-                                            src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg"
-                                            alt="Avatar" class="avatar"></th>
-                                    <th>
-                                        <h5><b>Mr. Hassan Magdy</b></h5>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <td class="column-avatar"></td>
-                                    <td>
-                                        <p>Cashier <br><br>
-                                            Email: hassan@gmail.com <br>
-                                            No Phone: 018-4643504 <br>
-                                        </p>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    <!-- Profile Details  -->
-                    <div class="modal-body">
-                        <div class="banner-countdown">
-                            <h5><b>Profile Details</b></h5>
-                            <p>Faculty: FKOM <br>
-                                Course: BCS <br>
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
+                    <table style="width:100%">
+                        <style>
+                          h5 {text-align: center;}
+                          h1 {text-align: center;}
+                          th{text-align: center;}
+                        </style>
+                         <tr>
+                          <th>
+                           <!-- Profile Details  -->
+                            <div class="modal-body">
+                             <button class="banner-countdown" href="#" data-toggle="modal" data-target="#cashModal">
+                             <h5><b>Pay via</b></h5>
+                             <h1>Cash <br>
+                             </h1>
+                             <img
+                                            src="https://logodix.com/logo/1099301.jpg"
+                                            alt="cash" style="width:130px;height:100px;">
+                            </div>
+                          </th>
+                          <th>
+                           <!-- Profile Details  -->
+                            <div class="modal-body">
+                            <button class="banner-countdown" href="#" data-toggle="modal" data-target="#qrModal">
+                             <h5><b>Pay via</b></h5>
+                             <h1>QR Pay <br>
+                             </h1>
+                             <img
+                                            src="https://www.agrobank.com.my/wp-content/uploads/2021/06/DuitNow-QR-Logo_FA2.png"
+                                            alt="QR" style="width:110px;height:100px;">
+                            </div>
+                          </th>
+                         </tr>
+                     </table>
             </div>
         </div>
     </div>
