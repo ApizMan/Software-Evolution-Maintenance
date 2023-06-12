@@ -9,6 +9,8 @@
     "license": "MIT",
     "require": {
         "php": "^7.3||^8.0",
+        "algolia/algoliasearch-client-php": "^3.3",
+        "algolia/scout-extended": "2.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -17,6 +19,7 @@
         "laravel/jetstream": "^2.1",
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
+        "laraveldaily/laravel-charts": "^0.2.1",
         "livewire/livewire": "^2.0",
         "lunarphp/lunar": "^0.2.7"
     },
