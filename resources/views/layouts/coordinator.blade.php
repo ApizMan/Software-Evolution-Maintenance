@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
+
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/logoPetakomkecil.ico') }}">
     <link
         href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext"
@@ -154,14 +154,6 @@
             <div class="row">
                 <div class="topbar-menu-area">
                     <div class="container">
-                        <div class="topbar-menu left-menu">
-                            <ul>
-                                <li class="menu-item">
-                                    <a title="Hotline: (+123) 456 789" href="#"><span
-                                            class="icon label-before fa fa-mobile"></span>Hotline: (+123) 456 789</a>
-                                </li>
-                            </ul>
-                        </div>
                         <div class="topbar-menu right-menu">
                             <ul>
                                 <li class="menu-item lang-menu menu-item-has-children parent">
@@ -189,72 +181,52 @@
                                     </ul>
                                 </li>
 
-                                @if (Route::has('login'))
+                                @if (Auth::guard('staff')->user())
                                     @auth
-                                        @if (Auth::user()->utype === 'ADM')
-                                            <li class="menu-item menu-item-has-children parent">
-                                                <a title="My Account" href="#Profile" data-toggle="modal"
-                                                data-target="#profileModal">My Account
-                                                    ({{ Auth::user()->name }}){{-- <i class="fa fa-angle-down"
-                                                        aria-hidden="true"></i></a> --}}
-                                                    {{-- <ul class="submenu curency">
-                                                    <li class="menu-item">
-                                                        <a title="Dashboard"
-                                                            href="{{ route('admin.dashboard') }}">Dashboard</a>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <a href="{{ route('logout') }}"
-                                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                                                    </li>
-                                                    <form id="logout-form" method="POST"
-                                                        action="{{ route('logout') }}">
-                                                        @csrf
-                                                    </form>
-                                                </ul> --}}
-                                            </li>
-                                        @else
-                                            <li class="menu-item menu-item-has-children parent">
-                                                <a title="My Account" href="#Profile" data-toggle="modal"
-                                                data-target="#profileModal">My Account
-                                                    ({{ Auth::user()->name }}){{-- <i class="fa fa-angle-down"
-                                                        aria-hidden="true"></i></a> --}}
-                                                    {{-- <ul class="submenu curency">
-                                                    <li class="menu-item">
-                                                        <a title="Dashboard"
-                                                            href="{{ route('user.dashboard') }}">Dashboard</a>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <a href="{{ route('logout') }}"
-                                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                                                    </li>
-                                                    <form id="logout-form" method="POST"
-                                                        action="{{ route('logout') }}">
-                                                        @csrf
-                                                    </form>
-                                                </ul> --}}
-                                            </li>
-                                        @endif
+                                        <li class="menu-item menu-item-has-children parent">
+                                            <a title="My Account" href="#Profile" data-toggle="modal"
+                                                data-target="#profileModal">My Cashier Account
+                                                ({{ Auth::user()->name }})
+                                        </li>
+                                    @else
+                                        <li class="menu-item menu-item-has-children parent">
+                                            <a title="My Account" href="/hub">My Admin Account
+                                                ({{ Auth::guard('staff')->user()->firstname }})
+                                        </li>
+                                    @endauth
+                                @else
+                                    @auth
+                                        <li class="menu-item menu-item-has-children parent">
+                                            <a title="My Account" href="#Profile" data-toggle="modal"
+                                                data-target="#profileModal">My Cashier Account
+                                                ({{ Auth::user()->name }})
+                                        </li>
                                     @else
                                         <li class="menu-item"><a title="Register or Login"
                                                 href="{{ route('login') }}">Login</a></li>
-                                        <li class="menu-item"><a title="Register or Login"
-                                                href="/hub">Login as Admin</a></li>
+                                        @if (Auth::guard('staff')->user())
+                                            <li class="menu-item"><a title="Register or Login" href="/hub">View as
+                                                    Admin</a></li>
+                                        @else
+                                            <li class="menu-item"><a title="Register or Login" href="/hub">Log as
+                                                    Admin</a></li>
+                                        @endif
                                         {{-- <li class="menu-item"><a title="Register or Login"
-                                                                href="{{ route('register') }}">Register</a></li> --}}
-                                    @endif
-                                    @endif
-                                </ul>
-                            </div>
+                                                        href="{{ route('register') }}">Register</a></li> --}}
+                                    @endauth
+                                @endif
+                            </ul>
                         </div>
                     </div>
+                </div>
 
-                    <div class="container">
-
-
-
-                        <div class="mid-section main-info-area">
+                <div class="container">
 
 
+
+                    <div class="mid-section main-info-area">
+
+                        @if (Auth::guard()->user())
                             <div class="wrap-logo-top left-section">
                                 <a href="{{ url('/') }}" class="link-to-home"
                                     style="font-size:14px; font-weight: 800;"><img
@@ -262,56 +234,78 @@
                                         style="height: 60px; width: 60px;"> PETAKOM MART
                                 </a>
                             </div>
-
-                            @livewire('header-search-component')
-
-                            <div class="wrap-icon right-section">
-                                <div class="wrap-icon-section show-up-after-1024">
-                                    <a href="#" class="mobile-navigation">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </a>
-                                </div>
+                        @else
+                            <div class="wrap-logo-top left-section">
+                                <a href="{{ url('/hub') }}" class="link-to-home"
+                                    style="font-size:14px; font-weight: 800;"><img
+                                        src="{{ asset('assets/images/logo-PETAKOM.png') }}" alt="mercado"
+                                        style="height: 60px; width: 60px;"> PETAKOM MART
+                                </a>
                             </div>
+                        @endif
 
-                        </div>
-                    </div>
 
-                    <div class="nav-section header-sticky">
+                        @livewire('header-search-component')
 
-                        <div class="primary-nav-section">
-                            <div class="container">
-                                <ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu">
-                                    <li class="menu-item home-icon">
-                                        <a href="{{ url('/') }}" class="link-term mercado-item-title"><i
-                                                class="fa fa-home" aria-hidden="true"></i></a>
-                                    </li>
-                                </ul>
+                        <div class="wrap-icon right-section">
+                            <div class="wrap-icon-section show-up-after-1024">
+                                <a href="#" class="mobile-navigation">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </a>
                             </div>
                         </div>
+
                     </div>
                 </div>
+
+                <div class="nav-section header-sticky">
+
+                    @if (Auth::guard()->user())
+                    <div class="primary-nav-section">
+                        <div class="container">
+                            <ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu">
+                                <li class="menu-item home-icon">
+                                    <a href="{{ url('/') }}" class="link-term mercado-item-title"><i
+                                            class="fa fa-home" aria-hidden="true"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    @else
+                    <div class="primary-nav-section">
+                        <div class="container">
+                            <ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu">
+                                <li class="menu-item home-icon">
+                                    <a href="{{ url('/hub') }}" class="link-term mercado-item-title"><i
+                                            class="fa fa-home" aria-hidden="true"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    @endif
+                </div>
             </div>
-        </header>
+        </div>
+    </header>
 
-        {{ $slot }}
-
-
-
-        <script src="{{ asset('assets/js/jquery-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
-        <script src="{{ asset('assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
-        <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('assets/js/jquery.flexslider.js') }}"></script>
-        {{-- <script src="{{ asset('assets/js/chosen.jquery.min.js') }}"></script> --}}
-        <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
-        <script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
-        <script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>
-        <script src="{{ asset('assets/js/functions.js') }}"></script>
-        @livewireScripts
+    {{ $slot }}
 
 
+    <script src="{{ asset('assets/js/jquery-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
+    <script src="{{ asset('assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.flexslider.js') }}"></script>
+    {{-- <script src="{{ asset('assets/js/chosen.jquery.min.js') }}"></script> --}}
+    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>
+    <script src="{{ asset('assets/js/functions.js') }}"></script>
+    @livewireScripts
 
-    </body>
 
-    </html>
+
+</body>
+
+</html>

@@ -12,4 +12,5 @@ class Product extends Model
     use Searchable;
 
     protected $table = "products";
+    protected $fillable = ['name', 'type_sale', 'regular price', 'sale_price', 'stock_status', 'quantity',];
 }
