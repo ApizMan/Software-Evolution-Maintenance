@@ -85,8 +85,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="profileModalLabel"></h1>
-                    <button type="button" class="btn btn-primary" style="background-color: #1068eb;">View Schedule
-                        Duty</button>
+
+                    <a href="/dutySchedule"><button type="button" class="btn btn-primary" style="background-color: #1068eb;"">View Schedule
+                        Duty</button></a>
+
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                         style="color: white;"><button type="button" class="btn btn-danger" style=" float: right;"><i

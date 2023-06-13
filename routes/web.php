@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\dutySchedule;
+use App\Http\Controllers\FullCalenderController;
 use App\Http\Controllers\Home;
 use App\Http\Controllers\register;
 use App\Http\Controllers\staff;
@@ -130,3 +131,6 @@ Route::get('/dutySchedule', dutySchedule::class)->name('duty_schedule.duty_sched
 Route::get('/phpinfo', function () {
     return phpinfo();
 });
+
+Route::get('fullcalender', [FullCalenderController::class, 'index']);
+Route::post('fullcalenderAjax', [FullCalenderController::class, 'ajax']);
