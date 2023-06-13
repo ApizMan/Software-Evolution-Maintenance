@@ -15,9 +15,14 @@
                              <style>
                                h4 {text-align: center;}
                                td {text-align: center;}
+                               .wrap-countdown{text-align: center;}
                              </style>
                                 <tr>
                                         <h4><b>Payment in progress</b></h4>
+                                </tr>
+                                <br>
+                                <tr>
+                                <div class="wrap-countdown mercado-countdown" data-expire="2023/12/12 12:34:56"></div>
                                 </tr>
                                 <tr>
                                     <td>
@@ -51,20 +56,25 @@
                         <div class="banner-countdown">
                             <table>
                              <style>
+                               img {text-align: center;}
                                h4 {text-align: center;}
                                tr {text-align: center;}
                                td {text-align: center;}
+                               .wrap-countdown{text-align: center;}
                              </style>
                                 <tr>
                                         <h4><b>Payment in progress</b></h4>
                                 </tr>
+                                <br>
                                 <tr>
-                                        <div>Time left = <span id="timer"></span>
+                                <div class="wrap-countdown mercado-countdown" data-expire="2023/12/12 12:34:56"></div>
                                 </tr>
+                                <br>
                                 <tr>
-                                <img
+                                    <center><img
                                             src="https://www.iium.edu.my/media/68540/3.png"
-                                            alt="qr code" style="width:300px;height:400px;"> 
+                                            alt="qrcode" style="width:300px;height:400px;"></center>
+                                 
                                 </tr>
                                 <br><br>
                                 <tr>
@@ -92,12 +102,13 @@
                           h5 {text-align: center;}
                           h1 {text-align: center;}
                           th{text-align: center;}
+                          img{text-align: center;}
                         </style>
                          <tr>
                           <th>
                            <!-- Profile Details  -->
                             <div class="modal-body">
-                             <button class="banner-countdown" href="#" data-toggle="modal" data-target="#cashModal">
+                             <button class="banner-countdown" href="#" data-toggle="modal" data-target="#cashModal" data-dismiss="modal">
                              <h5><b>Pay via</b></h5>
                              <h1>Cash <br>
                              </h1>
@@ -109,7 +120,7 @@
                           <th>
                            <!-- Profile Details  -->
                             <div class="modal-body">
-                            <button class="banner-countdown" href="#" data-toggle="modal" data-target="#qrModal">
+                            <button class="banner-countdown" href="#" data-toggle="modal" data-target="#qrModal" data-dismiss="modal">
                              <h5><b>Pay via</b></h5>
                              <h1>QR Pay <br>
                              </h1>
