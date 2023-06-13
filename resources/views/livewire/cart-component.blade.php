@@ -1,5 +1,140 @@
 <main id="main" class="main-site">
 
+<!-- Modal Cash-->
+<div class="modal faded" id="cashModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="cashModalLabel"></h1>
+                </div>
+                <div class="modal-body">
+                    <!-- Profile with Image  -->
+                    <div class="modal-body">
+                        <div class="banner-countdown">
+                            <table>
+                             <style>
+                               h4 {text-align: center;}
+                               td {text-align: center;}
+                               .wrap-countdown{text-align: center;}
+                             </style>
+                                <tr>
+                                        <h4><b>Payment in progress</b></h4>
+                                </tr>
+                                <br>
+                                <tr>
+                                <div class="wrap-countdown mercado-countdown" data-expire="2023/12/12 12:34:56"></div>
+                                </tr>
+                                <tr>
+                                    <td>
+                                      <button class="w3-button w3-green" data-dismiss="modal">Complete</button>
+                                    </td>
+                                </tr>
+                                <br><br>
+                                <tr>
+                                    <td>
+                                      <button class="w3-button w3-red" data-dismiss="modal">Cancel</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Modal QR-->
+<div class="modal faded" id="qrModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="qrModalLabel"></h1>
+                </div>
+                <div class="modal-body">
+                    <!-- Profile with Image  -->
+                    <div class="modal-body">
+                        <div class="banner-countdown">
+                            <table>
+                             <style>
+                               img {text-align: center;}
+                               h4 {text-align: center;}
+                               tr {text-align: center;}
+                               td {text-align: center;}
+                               .wrap-countdown{text-align: center;}
+                             </style>
+                                <tr>
+                                        <h4><b>Payment in progress</b></h4>
+                                </tr>
+                                <br>
+                                <tr>
+                                <div class="wrap-countdown mercado-countdown" data-expire="2023/12/12 12:34:56"></div>
+                                </tr>
+                                <br>
+                                <tr>
+                                    <center><img
+                                            src="https://www.iium.edu.my/media/68540/3.png"
+                                            alt="qrcode" style="width:300px;height:400px;"></center>
+                                 
+                                </tr>
+                                <br><br>
+                                <tr>
+                                    <td>
+                                      <button class="w3-button w3-red" data-dismiss="modal">Close</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Modal Checkout-->
+    <div class="modal faded" id="checkoutModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="checkoutModalLabel"></h1>
+                </div>
+                    <table style="width:100%">
+                        <style>
+                          h5 {text-align: center;}
+                          h1 {text-align: center;}
+                          th{text-align: center;}
+                          img{text-align: center;}
+                        </style>
+                         <tr>
+                          <th>
+                           <!-- Profile Details  -->
+                            <div class="modal-body">
+                             <button class="banner-countdown" href="#" data-toggle="modal" data-target="#cashModal" data-dismiss="modal">
+                             <h5><b>Pay via</b></h5>
+                             <h1>Cash <br>
+                             </h1>
+                             <img
+                                            src="https://logodix.com/logo/1099301.jpg"
+                                            alt="cash" style="width:130px;height:100px;">
+                            </div>
+                          </th>
+                          <th>
+                           <!-- Profile Details  -->
+                            <div class="modal-body">
+                            <button class="banner-countdown" href="#" data-toggle="modal" data-target="#qrModal" data-dismiss="modal">
+                             <h5><b>Pay via</b></h5>
+                             <h1>QR Pay <br>
+                             </h1>
+                             <img
+                                            src="https://www.agrobank.com.my/wp-content/uploads/2021/06/DuitNow-QR-Logo_FA2.png"
+                                            alt="QR" style="width:110px;height:100px;">
+                            </div>
+                          </th>
+                         </tr>
+                     </table>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
 
         <div class="wrap-breadcrumb">
@@ -32,8 +167,6 @@
                         <div class="quantity">
                             <div class="quantity-input">
                                 <input type="text" name="product-quatity" value="{{ $item->qty }}" data-max="120" pattern="[0-9]*">
-                                <a class="btn btn-increase" href="#" wire:click.prevent="increaseQuantity({{ $item->rowId }})"></a>
-                                <a class="btn btn-reduce" href="#" wire:click.prevent="decreaseQuantity({{ $item->rowId }})"></a>
                             </div>
                         </div>
                         <div class="price-field sub-total">
@@ -59,20 +192,14 @@
                     <p class="summary-info"><span class="title">Subtotal</span><b class="index">$ {{ Cart::subtotal() }}</b></p>
                     <p class="summary-info"><span class="title">Tax</span><b class="index">$ {{ Cart::tax() }}</b></p>
                     <p class="summary-info"><span class="title">Shipping</span><b class="index">Free Shipping</b></p>
-                    <p class="summary-info total-info "><span class="title">Total</span><b class="index">{{ Cart::total() }}</b></p>
                 </div>
                 <div class="checkout-info">
-                    <label class="checkbox-field">
-                        <input class="frm-input " name="have-code" id="have-code" value="" type="checkbox"><span>I have
-                            promo code</span>
-                    </label>
-                    <a class="btn btn-checkout" href="checkout.html">Check out</a>
+                    <a class="btn btn-checkout" href="#" data-toggle="modal" data-target="#checkoutModal">Check out</a>
                     <a class="link-to-shop" href="{{ url('/shop') }}">Continue Shopping<i class="fa fa-arrow-circle-right"
                             aria-hidden="true"></i></a>
                 </div>
                 <div class="update-clear">
                     <a class="btn btn-clear" href="#" wire:click.prevent="destroyAll()">Clear Shopping Cart</a>
-                    <a class="btn btn-update" href="#">Update Shopping Cart</a>
                 </div>
             </div>
 
