@@ -91,7 +91,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 Route::get('/report', ReportComponent::class)->name('report.report');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    // Route::get('/cart', CheckoutComponent::class)->name('checkout-component');
     Route::get('/cart', CartComponent::class)->name('product.cart');
 });
 

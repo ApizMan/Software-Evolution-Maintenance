@@ -54,7 +54,7 @@
                         <div class="short-desc">
                             <span>{{ $product->short_description }}</span>
                         </div>
-                        <div class="wrap-price"><span class="product-price">{{ $product->regular_price }}</span></div>
+                        <div class="wrap-price"><span class="product-price">RM {{ $product->regular_price }}</span></div>
                         <div class="stock-info in-stock">
                             <p class="availability">Availability: @if ($product->stock_status == 'In Stock')
                                     <b style="color: blue;">{{ $product->stock_status }}</b>
@@ -64,22 +64,29 @@
                             </p>
                         </div>
                         @if (Auth::guard('staff')->user())
-                            <div class="quantity">
-                                <span>Quantity:</span>
-                                <div class="quantity-input" style="width: 70px">
-                                    <input type="text" name="product-quatity" value="{{$product->quantity}}"
-                                        pattern="[0-9]*" disabled>
+                            @if ($product->stock_status == 'In Stock')
+                                <div class="quantity">
+                                    <span>Quantity:</span>
+                                    <div class="quantity-input" style="width: 70px">
+                                        <input type="text" name="product-quatity" value="{{ $product->quantity }}"
+                                            pattern="[0-9]*" disabled>
+                                    </div>
                                 </div>
-                            </div>
+                            @else
+                                <div class="quantity">
+                                    <span>Quantity:</span>
+                                    <div class="quantity-input" style="width: 70px">
+                                        <input type="text" name="product-quatity" value="0" pattern="[0-9]*"
+                                            disabled>
+                                    </div>
+                                </div>
+                            @endif
                         @else
                             <div class="quantity">
                                 <span>Quantity:</span>
-                                <div class="quantity-input">
+                                <div class="quantity-input" style="width: 70px">
                                     <input type="text" name="product-quatity" value="1" data-max="120"
-                                        pattern="[0-9]*">
-
-                                    <a class="btn btn-reduce" href="#"></a>
-                                    <a class="btn btn-increase" href="#"></a>
+                                        pattern="[0-9]*" disabled>
                                 </div>
                             </div>
                             @if ($product->stock_status == 'In Stock')
@@ -295,7 +302,7 @@
                                             <a href="{{ route('product.details', ['slug' => $p_product->slug]) }}"
                                                 class="product-name"><span>{{ $p_product->name }}</span></a>
                                             <div class="wrap-price"><span
-                                                    class="product-price">{{ $p_product->regular_price }}</span></div>
+                                                    class="product-price">RM {{ $p_product->regular_price }}</span></div>
                                         </div>
                                     </div>
                                 </li>
@@ -336,7 +343,7 @@
                                         <a href="{{ route('product.details', ['slug' => $r_product->slug]) }}"
                                             class="product-name"><span>{{ $r_product->name }}</span></a>
                                         <div class="wrap-price"><span
-                                                class="product-price">{{ $r_product->regular_price }}</span></div>
+                                                class="product-price">RM {{ $r_product->regular_price }}</span></div>
                                     </div>
                                 </div>
                             @endforeach

@@ -11,7 +11,7 @@
                     <div class="slide-info slide-1">
                         <h2 class="f-title">Kid Smart <b>Watches</b></h2>
                         <span class="subtitle">Compra todos tus productos Smart por internet.</span>
-                        <p class="sale-info">Only price: <span class="price">$59.99</span></p>
+                        <p class="sale-info">Only price: <span class="price">RM 59.99</span></p>
                         <a href="/shop" class="btn-link">Shop Now</a>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                     <div class="slide-info slide-3">
                         <h2 class="f-title">Great Range of <b>Exclusive Furniture Packages</b></h2>
                         <span class="f-subtitle">Exclusive Furniture Packages to Suit every need.</span>
-                        <p class="sale-info">Stating at: <b class="price">$225.00</b></p>
+                        <p class="sale-info">Stating at: <b class="price">RM 225.00</b></p>
                         <a href="/shop" class="btn-link">Shop Now</a>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
         <section id="section2">
             <div class="wrap-show-advance-info-box style-1 has-countdown">
                 <h3 class="title-box">On Sale</h3>
-                <div class="wrap-countdown mercado-countdown" data-expire="2020/12/12 12:34:56"></div>
+                <div class="wrap-countdown mercado-countdown" data-expire="2023/12/12 12:34:56"></div>
                 <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container " data-items="5"
                     data-loop="false" data-nav="true" data-dots="false"
                     data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
@@ -93,13 +93,13 @@
                                     <a href="#" class="product-name"><span>{{ $product->name }}</span></a>
                                     @if ($product->type_sale == 'Sales')
                                         <div class="wrap-price"><ins>
-                                                <p class="product-price">{{ $product->sale_price }}</p>
+                                                <p class="product-price">RM {{ $product->sale_price }}</p>
                                             </ins> <del>
-                                                <p class="product-price">{{ $product->regular_price }}</p>
+                                                <p class="product-price">RM {{ $product->regular_price }}</p>
                                             </del></div>
                                     @else
                                         <div class="wrap-price"><span
-                                                class="product-price">{{ $product->regular_price }}</span>
+                                                class="product-price">RM {{ $product->regular_price }}</span>
                                         </div>
                                     @endif
 
@@ -163,14 +163,14 @@
                                                     class="product-name"><span>{{ $product->name }}</span></a>
                                                 @if ($product->type_sale == 'Sales')
                                                     <div class="wrap-price"><ins>
-                                                            <p class="product-price">{{ $product->sale_price }}</p>
+                                                            <p class="product-price">RM {{ $product->sale_price }}</p>
                                                         </ins> <del>
-                                                            <p class="product-price">{{ $product->regular_price }}
+                                                            <p class="product-price">RM {{ $product->regular_price }}
                                                             </p>
                                                         </del></div>
                                                 @else
                                                     <div class="wrap-price"><span
-                                                            class="product-price">{{ $product->regular_price }}</span>
+                                                            class="product-price">RM {{ $product->regular_price }}</span>
                                                     </div>
                                                 @endif
 
@@ -247,15 +247,15 @@
                                                         class="product-name"><span>{{ $product->name }}</span></a>
                                                     @if ($product->type_sale == 'Sales')
                                                         <div class="wrap-price"><ins>
-                                                                <p class="product-price">{{ $product->sale_price }}
+                                                                <p class="product-price">RM {{ $product->sale_price }}
                                                                 </p>
                                                             </ins> <del>
-                                                                <p class="product-price">{{ $product->regular_price }}
+                                                                <p class="product-price">RM {{ $product->regular_price }}
                                                                 </p>
                                                             </del></div>
                                                     @else
                                                         <div class="wrap-price"><span
-                                                                class="product-price">{{ $product->regular_price }}</span>
+                                                                class="product-price">RM {{ $product->regular_price }}</span>
                                                         </div>
                                                     @endif
 
@@ -306,15 +306,15 @@
                                                         class="product-name"><span>{{ $product->name }}</span></a>
                                                     @if ($product->type_sale == 'Sales')
                                                         <div class="wrap-price"><ins>
-                                                                <p class="product-price">{{ $product->sale_price }}
+                                                                <p class="product-price">RM {{ $product->sale_price }}
                                                                 </p>
                                                             </ins> <del>
-                                                                <p class="product-price">{{ $product->regular_price }}
+                                                                <p class="product-price">RM {{ $product->regular_price }}
                                                                 </p>
                                                             </del></div>
                                                     @else
                                                         <div class="wrap-price"><span
-                                                                class="product-price">{{ $product->regular_price }}</span>
+                                                                class="product-price">RM {{ $product->regular_price }}</span>
                                                         </div>
                                                     @endif
 
@@ -365,15 +365,15 @@
                                                         class="product-name"><span>{{ $product->name }}</span></a>
                                                     @if ($product->type_sale == 'Sales')
                                                         <div class="wrap-price"><ins>
-                                                                <p class="product-price">{{ $product->sale_price }}
+                                                                <p class="product-price">RM {{ $product->sale_price }}
                                                                 </p>
                                                             </ins> <del>
-                                                                <p class="product-price">{{ $product->regular_price }}
+                                                                <p class="product-price">RM {{ $product->regular_price }}
                                                                 </p>
                                                             </del></div>
                                                     @else
                                                         <div class="wrap-price"><span
-                                                                class="product-price">{{ $product->regular_price }}</span>
+                                                                class="product-price">RM {{ $product->regular_price }}</span>
                                                         </div>
                                                     @endif
 
@@ -424,15 +424,15 @@
                                                         class="product-name"><span>{{ $product->name }}</span></a>
                                                     @if ($product->type_sale == 'Sales')
                                                         <div class="wrap-price"><ins>
-                                                                <p class="product-price">{{ $product->sale_price }}
+                                                                <p class="product-price">RM {{ $product->sale_price }}
                                                                 </p>
                                                             </ins> <del>
-                                                                <p class="product-price">{{ $product->regular_price }}
+                                                                <p class="product-price">RM {{ $product->regular_price }}
                                                                 </p>
                                                             </del></div>
                                                     @else
                                                         <div class="wrap-price"><span
-                                                                class="product-price">{{ $product->regular_price }}</span>
+                                                                class="product-price">RM {{ $product->regular_price }}</span>
                                                         </div>
                                                     @endif
 

@@ -59,6 +59,7 @@
             <th>Discount</th>
             <th>Status</th>
             <th>Quantity in Inventory</th>
+            <th>Notice</th>
         </tr>
         @foreach ($products as $product)
             <tr>
@@ -66,8 +67,19 @@
                 <td>{{ $product->type_sale }}e</td>
                 <td>{{ $product->regular_price }}</td>
                 <td>{{ (($product->regular_price - $product->sale_price) * 100) / 100 }}%</td>
-                <td>{{ $product->stock_status }}</td>
+                @if ($product->quantity > 0)
+                    <td>In Stock</td>
+                @else
+                    <td>Out of Stock</td>
+                @endif
                 <td>{{ $product->quantity }}</td>
+                <td>@if ($product->quantity == 0)
+                    This Item need to refill <b style="color: red;">Immediately</b>
+                @elseif ($product->quantity <= 5)
+                    This Item need to refill
+                @else
+                    -
+                @endif</td>
             </tr>
         @endforeach
     </table>
