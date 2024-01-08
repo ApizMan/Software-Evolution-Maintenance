@@ -29,7 +29,7 @@
 
 
     <style>
-        .modal-header { 
+        .modal-header {
             padding: 9px 15px;
             border-bottom: 1px solid #eee;
             background-color: #3fbddd;
