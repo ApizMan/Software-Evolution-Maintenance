@@ -3,6 +3,7 @@
 use App\Http\Controllers\dutySchedule;
 use App\Http\Controllers\FullCalenderController;
 use App\Http\Controllers\Home;
+use App\Http\Controllers\LunarProductController;
 use App\Http\Controllers\register;
 use App\Http\Controllers\staff;
 use App\Http\Livewire\AboutUsComponent;
@@ -22,6 +23,7 @@ use App\Http\Livewire\TermsConditionsComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use Illuminate\Support\Facades\Route;
 use Lunar\Hub\Facades\Menu;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +50,8 @@ Route::get('/staff/{id}/edit', [staff::class, 'edit'])->name('staff.edit_staff_P
 Route::post('/staff/{id}/update', [staff::class, 'update']);
 Route::get('/staff/{id}/delete', [staff::class, 'delete']);
 
+Route::resource('products', LunarProductController::class)->except(['index']);
+Route::get('products/new-index', [LunarProductController::class, 'index'])->name('products.new-index');
 
 Route::get('/shop', ShopComponent::class);
 
