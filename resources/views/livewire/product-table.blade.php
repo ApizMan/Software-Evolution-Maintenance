@@ -12,7 +12,6 @@
             </tr>
         </thead>
         <tbody>
-            {{-- Loop through your products and populate the table rows --}}
             @foreach($products as $product)
                 <tr>
                     <td>{{ $product->status }}</td>

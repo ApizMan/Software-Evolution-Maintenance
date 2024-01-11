@@ -84,8 +84,5 @@
             </x-hub::modal.dialog>
             @endforeach
         </tbody>
-
     </table>
-
-
 </div>
