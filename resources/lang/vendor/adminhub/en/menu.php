@@ -2,7 +2,7 @@
 
 return [
     'sidebar.index' => 'Dashboard',
-    'sidebar.catalogue-manager' => 'Catalogue Manager',
+    'sidebar.ue-manager' => 'ue Manager',
     'sidebar.products' => 'Products',
     'sidebar.product-types' => 'Product Types',
     'sidebar.brands' => 'Brands',
@@ -10,7 +10,7 @@ return [
     'sidebar.order-processing' => 'Order Processing',
     'sidebar.orders' => 'Orders',
     'sidebar.customers' => 'Customers',
-    'sidebar.catalogue' => 'Catalogue',
+    'sidebar.ue' => 'ue',
     'sidebar.sales' => 'Sales',
     'sidebar.discounts' => 'Discounts',
     /**

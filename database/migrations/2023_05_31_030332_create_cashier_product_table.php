@@ -17,7 +17,7 @@ class CreateCashierProductTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('type_sale')->nullable();
-            $table->string('color_type_sale');
+            $table->string('color_type_sale')->nullable();;
             $table->string('slug')->unique();
             $table->string('short_description')->nullable();
             $table->text('description');

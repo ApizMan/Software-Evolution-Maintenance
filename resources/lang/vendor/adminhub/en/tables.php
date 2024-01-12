@@ -25,6 +25,7 @@ return [
     'headings.sku' => 'SKU',
     'headings.product_type' => 'Product Type',
     'headings.stock' => 'Stock',
+    'headings.actions' => 'Actions',
     'headings.product_count' => 'Product Count',
     'headings.mapped_attributes_count' => 'Attributes count',
     'headings.attribute_type' => 'Attribute Type',

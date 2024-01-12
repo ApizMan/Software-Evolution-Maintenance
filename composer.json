@@ -20,7 +20,7 @@
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
         "laraveldaily/laravel-charts": "^0.2.1",
-        "livewire/livewire": "^2.0",
+        "livewire/livewire": "^2.12",
         "lunarphp/lunar": "^0.2.7"
     },
     "require-dev": {
